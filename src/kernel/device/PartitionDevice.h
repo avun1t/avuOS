@@ -5,7 +5,7 @@
 
 class PartitionDevice : public BlockDevice {
 public:
-	uin32_t offset;
+	uint32_t offset;
 	BlockDevice *parent;
 
 	PartitionDevice(BlockDevice *parent, uint32_t offset);

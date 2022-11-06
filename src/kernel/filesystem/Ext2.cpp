@@ -10,6 +10,7 @@ Ext2Filesystem::Ext2Filesystem(BlockDevice *device) : Filesystem(device)
 {
 	get_superblock(&superblock);
 	
+	rootInode = 2;
 	block_size = 1024 << (superblock.block_size);
 	block_group_descriptor_table = superblock.superblock_block+1;
 	blocks_per_inode_table = (superblock.inode_size * superblock.inodes_per_group)/block_size;
@@ -80,11 +81,14 @@ uint32_t Ext2Filesystem::block_to_sector(uint32_t block)
 	return (block_size/512)*block;
 }
 
-void Ext2Filesystem::get_inode(InodeID id, Inode* inode)
+Inode *Ext2Filesystem::get_inode(InodeID id)
 {
-	inode->id = id;
-	inode->fs = this;
-	((Ext2Inode*)inode)->read_raw();
+	Ext2Inode *ret = (Ext2Inode *)kmalloc(sizeof(Ext2Inode));
+	
+	ret->id = id;
+	ret->fs = this;
+	ret->read_raw();
+	return ret;
 }
 
 const char *Ext2Filesystem::name() const
@@ -111,21 +115,21 @@ uint32_t Ext2Inode::get_block()
 
 void Ext2Inode::read_raw()
 {
-	uint8_t* block_buf = static_cast<uint8_t *>(kmalloc(fs->sectors_per_block * 512));
+	uint8_t* block_buf = static_cast<uint8_t *>(kmalloc(fs->block_size));
 
 	uint32_t bg = get_block_group();
-	ext2_block_group_descriptor *d = (ext2_block_group_descriptor *) fs->read_block(2, block_buf);
+	fs->read_block(2, block_buf);
+	auto *d = (ext2_block_group_descriptor *)block_buf;
 	for (int i = 0; i < bg; i++) d++; //note to self - d++ adds to the pointer by sizeof(ext2_block_group_descriptor)
 	uint32_t inode_table = d->inode_table;
 
-	//TODO: Is this safe? Idk, I wrote this a long time ago.
 	fs->read_block(inode_table + get_block(), block_buf);
-	uint32_t index = get_index() % fs->inodes_per_block;
+	uint32_t index = get_index() % fs->superblock.inodes_per_group;
 	Raw* inodeRaw = reinterpret_cast<Raw *>(block_buf);
 	for (int i = 0; i < index; i++) inodeRaw++; //same here as above
 
 	memcpy(&raw, inodeRaw, sizeof(Ext2Inode::Raw));
-	kfree(block_buf, fs->sectors_per_block * 512);
+	kfree(block_buf, fs->block_size);
 }
 
 bool Ext2Inode::read(uint32_t start, uint32_t length, uint8_t *buf)
@@ -147,4 +151,48 @@ bool Ext2Inode::read(uint32_t start, uint32_t length, uint8_t *buf)
 		printf("WARNING! File uses t_pointer. Will not work.\n");
 	
 	return true;
+}
+
+bool Ext2Inode::is_directory()
+{
+	return (raw.type & 0xF000) == EXT2_DIRECTORY;
+}
+
+bool Ext2Inode::is_link()
+{
+	return (raw.type & 0xF000) == EXT2_SYMLINK;
+}
+
+Inode* Ext2Inode::find(string find_name)
+{
+	Inode* ret = nullptr;
+
+	if ((raw.type & 0xF000) == EXT2_DIRECTORY) {
+		uint8_t* buf = static_cast<uint8_t *>(kmalloc(fs->block_size));
+		for (int i = 0; i < 12; i++) {
+			uint32_t block = raw.block_pointers[i];
+			
+			if (block == 0 || block > fs->superblock.total_blocks);
+			
+			fs->read_block(block, buf);
+			ext2_directory* dir = reinterpret_cast<ext2_directory *>(buf);
+			uint32_t add = 0;
+			char name_buf[257];
+			
+			while (dir->inode != 0 && add < fs->block_size) {
+				memcpy(name_buf, &dir->type+1, dir->name_length);
+				
+				name_buf[dir->name_length] = '\0';
+				printf(name_buf);
+				printf("\n");
+				
+				if (strcmp(find_name, name_buf)) {
+					ret = fs->get_inode(dir->inode);
+				}
+			}
+		}
+		kfree(buf, fs->block_size);
+	}
+	
+	return ret;
 }

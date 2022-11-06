@@ -1,10 +1,10 @@
 [bits 32]
-[extern syscallHandler]
+[extern int_syscall_handler]
 global syscall_handler
 syscall_handler:
 	push ebx
 	push eax
-	call syscallHandler
+	call int_syscall_handler
 	pop eax
 	pop ebx
 	iret

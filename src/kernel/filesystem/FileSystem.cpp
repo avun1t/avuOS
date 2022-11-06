@@ -1,6 +1,6 @@
 #include <filesystem/FileSystem.h>
 
-filesystem::Filesystem(BlockDevice *device)
+Filesystem::Filesystem(BlockDevice *device)
 {
     this->device = device;
 }
@@ -15,5 +15,5 @@ bool Filesystem::probe(BlockDevice *dev)
     return false;
 }
 
-void Filesystem::get_inode(InodeID id, Inode *inode)
+Inode *Filesystem::get_inode(InodeID id)
 {}

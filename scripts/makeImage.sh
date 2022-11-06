@@ -31,23 +31,21 @@ mke2fs -q -I 128 -b 1024 "${dev}p1" || (echo "Couldn't create filesystem." && ex
 echo "Created filesystem."
 
 echo "Mounting filesystem to mnt/ ..."
-mkdir -p mnt/
-mount "${dev}p1" mnt/ || (echo "Couldn't mount." && exit 1)
+mount "${dev}p1" /mnt || (echo "Couldn't mount." && exit 1)
 echo "Mounted."
 
 echo "Copying base and kernel to filesystem..."
-cp -r "${SOURCE_DIR}/base/"* mnt/ || (echo "Couldn't copy." && exit 1)
-mkdir -p mnt/boot || (echo "Couldn't make mnt/boot." && exit 1)
-cp src/kernel/yuku32 mnt/boot || (echo "Couldn't copy kernel." && exit 1)
+cp -r "${SOURCE_DIR}/base/"* /mnt || (echo "Couldn't copy." && exit 1)
+mkdir -p /mnt/boot || (echo "Couldn't make mnt/boot." && exit 1)
+cp src/kernel/yuku32 /mnt/boot || (echo "Couldn't copy kernel." && exit 1)
 echo "Copied."
 
 echo "Installing grub..."
-grub-install --boot-directory=mnt/boot --target=i386-pc --modules="ext2 part_msdos" "${dev}" || (echo "Couldn't install grub." && exit 1)
-cp "${SOURCE_DIR}/scripts/grub.cfg" mnt/boot/grub || (echo "Couldn't copy grub.cfg." && exit 1)
+grub-install --boot-directory=/mnt/boot --target=i386-pc --modules="ext2 part_msdos" "${dev}" || (echo "Couldn't install grub." && exit 1)
+cp "${SOURCE_DIR}/scripts/grub.cfg" /mnt/boot/grub || (echo "Couldn't copy grub.cfg." && exit 1)
 echo "Installed grub!"
 
 echo "Unmounting and cleaning up..."
-umount mnt/ || (echo "Couldn't unmount." && exit 1)
-rmdir mnt || (echo "Couldn't rmdir mnt." && exit 1)
+(umount /mnt && sync)|| (echo "Couldn't unmount." && exit 1)
 losetup -d "${dev}" || (echo "Couldn't delete loopback device." && exit 1)
 echo "Done! Saved to avuOS.img"

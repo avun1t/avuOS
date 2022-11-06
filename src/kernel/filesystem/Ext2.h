@@ -87,7 +87,7 @@ typedef struct __attribute__((packed)) ext2_directory {
 	uint8_t type;
 } ext2_directory;
 
-class Ext2FileSystem;
+class Ext2Filesystem;
 
 class Ext2Inode : public Inode {
 public:
@@ -121,9 +121,12 @@ public:
 	uint32_t get_block_group();
 	uint32_t get_index();
 	uint32_t get_block();
+	bool is_directory() override;
+	bool is_link() override;
 
 	void read_raw();
-	bool read(uint32_t start, uint32_t length uint8_t *buf);
+	bool read(uint32_t start, uint32_t length, uint8_t *buf) override;
+	Inode *find(string name) override;
 };
 
 class Ext2Filesystem : public Filesystem {
@@ -140,7 +143,7 @@ public:
 	Ext2Filesystem(BlockDevice *device);
 	const char* name() const;
 	static bool probe(BlockDevice* dev);
-	void get_inode(InodeID id, Inode* inode);
+	Inode *get_inode(InodeID id);
 	void get_superblock(ext2_superblock *sb);
 	uint32_t block_to_sector(uint32_t block);
 	void read_slink(uint32_t block, uint8_t *buf);
