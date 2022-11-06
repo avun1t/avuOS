@@ -62,13 +62,6 @@ void shell()
 	__kill__();
 }
 
-uint8_t prog[0x1000];
-
-void progx()
-{
-	exec(prog);
-}
-
 /*
 bool find_and_execute(char *cmd, bool wait)
 {

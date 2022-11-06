@@ -1,8 +1,6 @@
 #include <common.h>
 #include <memory/gdt.h>
 
-#define GDT_ENTRIES 5
-
 GDTEntry gdt[GDT_ENTRIES];
 GDTPointer gp;
 

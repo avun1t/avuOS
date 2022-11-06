@@ -70,6 +70,8 @@ void kmain_late()
 	//Ext2Inode* in2 = new(kmalloc(sizeof(Ext2Inode))) Ext2Inode;
 	//printf("%d\n", in2->is_link());
 
+	printf("Used memory: %dKiB\n", get_used_mem());
+
 	printf("The OS will not work for now. Paging and alloc are being rewritten.");
 	while (1);
 
