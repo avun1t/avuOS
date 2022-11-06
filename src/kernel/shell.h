@@ -1,9 +1,9 @@
 #ifndef __SHELL_H_
 #define __SHELL_H_
 
-#include <filesystem/ext2.h>
+#include <filesystem/Ext2.h>
 
-void init_shell(filesystem_t *fsp);
+void init_shell(Filesystem *fsp);
 void shell();
 static void command_eval(char *cmd, char *args);
 

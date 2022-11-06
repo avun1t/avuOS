@@ -300,3 +300,8 @@ char *strcat(char *dest, const char *src)
 	dest[i+j] = '\0';
 	return dest;
 }
+
+extern "C" void __cxa_pure_virtual()
+{
+	// do nothing or print an error message
+}

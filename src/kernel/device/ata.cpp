@@ -1,5 +1,5 @@
 #include <common.h>
-#include <ata.h>
+#include <device/ata.h>
 
 /*
  * This system is to read disks formatted with an MBR only.
@@ -9,7 +9,7 @@ uint8_t boot_disk = 0;
 uint8_t ata_buf[512];
 uint8_t ata_buf2[512];
 
-void prepare_disk(int disk, int address)
+void pio_prepare_disk(int disk, int address)
 {
     outb(0x1F1, 0x00);
     outb(0x1F2, 0x01);
@@ -21,27 +21,27 @@ void prepare_disk(int disk, int address)
     while (!(inb(0x1F7) & 0x08)) {}
 }
 
-void read_sector(int disk, int address, uint8_t *sect)
+void pio_read_sector(int disk, int sector, uint8_t *buffer)
 {
-    prepare_disk(disk, address);
+    pio_prepare_disk(disk, sector);
 
     for (int i = 0; i < 256; i++) {
         uint16_t tmp = inw(0x1F0);
-        sect[i*2] = (uint8_t)tmp;
-        sect[i*2+1] = (uint8_t)(tmp >> 8);
+        buffer[i*2] = (uint8_t)tmp;
+        buffer[i*2+1] = (uint8_t)(tmp >> 8);
     }
 }
 
-void read_sectors(int disk, int address, int sectors, uint8_t *sect)
+void pio_read_sectors(int disk, int sector, int sectors, uint8_t *buffer)
 {
     for (int i = 0; i < sectors; i++) {
-        read_sector(disk, address+i, sect+i*512);
+        pio_read_sector(disk, sector+i, buffer+i*512);
     }
 }
 
-int get_first_partition(int disk)
+int pio_get_first_partition(int disk)
 {
-    prepare_disk(disk, 0);
+    pio_prepare_disk(disk, 0);
     uint16_t pos = 0;
 
     for (int i = 0; i < 256; i++) {
@@ -53,6 +53,3 @@ int get_first_partition(int disk)
 
     return pos;
 }
-
-int get_fs_type(int disk)
-{}

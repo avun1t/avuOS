@@ -2,7 +2,7 @@
 #include <keyboard.h>
 #include <stdio.h>
 #include <shell.h>
-#include <filesystem/ext2.h>
+#include <filesystem/Ext2.h>
 #include <memory/heap.h>
 #include <tasking/tasking.h>
 #include <tasking/elf.h>
@@ -16,16 +16,16 @@ char dirbuf[512];
 char dirbuf2[512];
 
 bool exitShell = false;
-file_t currentDir = {}, fileBuf = {};
+//file_t currentDir = {}, fileBuf = {};
 extern bool shell_mode;
 extern char kbdbuf[256];
-filesystem_t *shellfs;
+Filesystem *shellfs;
 extern bool tasking_enabled;
 
-void init_shell(filesystem_t *fsp)
+void init_shell(Filesystem *fsp)
 {
 	shellfs = fsp;
-	shellfs->get_file("/",&currentDir,shellfs);
+	//shellfs->get_file("/",&currentDir,shellfs);
 
 	dirbuf[0] = '/';
 	dirbuf[1] = '\0';
@@ -69,6 +69,7 @@ void progx()
 	exec(prog);
 }
 
+/*
 bool find_and_execute(char *cmd, bool wait)
 {
 	file_t *file = (file_t *)kmalloc(sizeof(file_t));
@@ -90,9 +91,11 @@ bool find_and_execute(char *cmd, bool wait)
 
 	return false;
 }
+*/
 
 static void command_eval(char *cmd, char *args)
 {
+	/*
 	if (strcmp(cmd,"help")) {
 		println("ls: List the files in the current directory. Use -h for help.");
 		println("cd: Change the current directory.");
@@ -127,7 +130,7 @@ static void command_eval(char *cmd, char *args)
 				} else {
 					ext2_list_directory(inodeID, ext2);
 				}
-			}*/
+			}*//*
 		}
 	} else if (strcmp(cmd,"cd")) {
 		strcpy(dirbuf, dirbuf2);
@@ -238,4 +241,5 @@ static void command_eval(char *cmd, char *args)
 			printf("\"%s\" is not a recognized command, file, or program.\n", cmd);
 		}
 	}
+	*/
 }

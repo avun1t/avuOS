@@ -17,7 +17,7 @@
 	(((ap) = (ap) + __va_argsize(t)),       \
 	*((t*)(void *)((ap) - __va_argsize(t))))
 
-typedef char* va_list;
+typedef char *va_list;
 typedef unsigned int uint32_t;
 typedef signed int int32_t;
 typedef unsigned short uint16_t;

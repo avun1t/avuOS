@@ -1,6 +1,8 @@
 #ifndef __STDIO_H_
 #define __STDIO_H_
 
+#include <common.h>
+
 #define SCREEN_CHAR_WIDTH 80
 #define SCREEN_CHAR_HEIGHT 25
 

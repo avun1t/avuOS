@@ -29,6 +29,7 @@ Frame first_available_frame()
 	}
 
 	PANIC("NO_HEAP_SPACE", "The heap ran out of memory.", true);
+	return frbuf;
 }
 
 // len is the amount of 16 byte frames, not bytes
