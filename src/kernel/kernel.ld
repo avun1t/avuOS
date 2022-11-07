@@ -3,7 +3,7 @@ ENTRY(start)
 SECTIONS {
     . = 0xC0100000;
 
-    krnlstart = .;
+    PROVIDE(KERNEL_START = .);
 
     .text : AT(ADDR(.text) - 0xC0000000)
     {
@@ -21,5 +21,5 @@ SECTIONS {
         *(.bss*)
     }
 
-    krnlend = .;
+    PROVIDE(KERNEL_END = .);
 }

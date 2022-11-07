@@ -3,6 +3,11 @@
 
 #include <common.h>
 
+#define ASSERT(cond)	\
+	if (!(cond)) {		\
+		PANIC("Assertion failed: ", __FILE__ " at line " STR(__LINE__), true);	\
+	}
+
 #define SCREEN_CHAR_WIDTH 80
 #define SCREEN_CHAR_HEIGHT 25
 

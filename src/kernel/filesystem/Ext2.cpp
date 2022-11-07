@@ -1,6 +1,6 @@
 #include <common.h>
-#include <memory/heap.h>
-#include <stdio.h>
+#include <memory/kliballoc.h>
+#include <kstdio.h>
 #include <filesystem/Ext2.h>
 #include <filesystem/FileSystem.h>
 
@@ -55,7 +55,7 @@ void Ext2Filesystem::read_slink(uint32_t block, uint8_t *buf)
 		read_block(blocks[i], buf+i*block_size);
 	}
 
-	kfree(bbuf, block_size);
+	kfree(bbuf);
 }
 
 void Ext2Filesystem::read_dlink(uint32_t block, uint8_t *buf)
@@ -73,7 +73,7 @@ void Ext2Filesystem::read_dlink(uint32_t block, uint8_t *buf)
 		read_block(blocks[i], buf+i*singsize);
 	}
 
-	kfree(bbuf, block_size);
+	kfree(bbuf);
 }
 
 uint32_t Ext2Filesystem::block_to_sector(uint32_t block)
@@ -129,7 +129,7 @@ void Ext2Inode::read_raw()
 	for (int i = 0; i < index; i++) inodeRaw++; //same here as above
 
 	memcpy(&raw, inodeRaw, sizeof(Ext2Inode::Raw));
-	kfree(block_buf, fs->block_size);
+	kfree(block_buf);
 }
 
 bool Ext2Inode::read(uint32_t start, uint32_t length, uint8_t *buf)
@@ -191,7 +191,7 @@ Inode* Ext2Inode::find(string find_name)
 				}
 			}
 		}
-		kfree(buf, fs->block_size);
+		kfree(buf);
 	}
 	
 	return ret;
