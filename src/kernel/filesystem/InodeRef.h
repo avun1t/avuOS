@@ -5,7 +5,7 @@
 
 class InodeRef {
 public:
-	InodeRef(Inode &inode, const string name, InodeRef *parent);
+	InodeRef(Inode &inode, string name, InodeRef *parent);
 	Inode &inode();
 	string name();
 	InodeRef *parent();

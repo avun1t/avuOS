@@ -1,7 +1,7 @@
 #ifndef __PIODEVICE_H_
 #define __PIODEVICE_H_
 
-#include <common.h>
+#include <kstddef.h>
 #include "BlockDevice.h"
 
 class PIODevice : public BlockDevice {

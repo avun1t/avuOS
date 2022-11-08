@@ -1,5 +1,5 @@
-#ifndef __COMMON_H_
-#define __COMMON_H_
+#ifndef __KSTDDEF_H_
+#define __KSTDDEF_H_
 
 #define NULL 0
 
@@ -68,5 +68,9 @@ void sti();
 int str_to_int(char *str);
 void to_upper(char *str);
 char *strcat(char *dest, const char *src);
+void *operator new(size_t size);
+void *operator new[](size_t size);
+void operator delete(void *p);
+void operator delete[](void *p);
 
-#endif // __COMMON_H_
+#endif // __KSTDDEF_H_

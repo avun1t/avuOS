@@ -1,7 +1,7 @@
 #ifndef __BLOCKDEVICE_H_
 #define __BLOCKDEVICE_H_
 
-#include <common.h>
+#include <kstddef.h>
 #include "Device.h"
 
 class BlockDevice : public Device {

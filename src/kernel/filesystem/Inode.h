@@ -1,7 +1,7 @@
 #ifndef __INODE_H_
 #define __INODE_H_
 
-#include <common.h>
+#include <kstddef.h>
 #include <filesystem/FileSystem.h>
 
 class Filesystem;

@@ -1,5 +1,6 @@
-#include <common.h>
+#include <kstddef.h>
 #include <kstdio.h>
+#include <memory/kliballoc.h>
 
 void outb(uint16_t port, uint8_t value)
 {
@@ -299,6 +300,26 @@ char *strcat(char *dest, const char *src)
 	
 	dest[i+j] = '\0';
 	return dest;
+}
+
+void *operator new(size_t size)
+{
+	return kmalloc(size);
+}
+
+void *operator new[](size_t size)
+{
+	return kmalloc(size);
+}
+
+void operator delete(void *p)
+{
+	kfree(p);
+}
+
+void operator delete[](void *p)
+{
+	kfree(p);
 }
 
 extern "C" void __cxa_pure_virtual()
