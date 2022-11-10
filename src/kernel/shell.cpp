@@ -11,27 +11,19 @@
 #include <kernel/device/ide.h>
 #include <kernel/filesystem/VFS.h>
 
-char cmdbuf[256];
-char argbuf[256];
-char dir_buf[256];
-
-bool exitShell = false;
-InodeRef *current_dir;
 extern bool shell_mode;
 extern char kbdbuf[256];
 extern bool tasking_enabled;
 
-void init_shell()
-{
-	current_dir = VFS::inst()->root_ref();
-}
+Shell::Shell() : current_dir(VFS::inst().resolve_path("/", DC::shared_ptr<InodeRef>(nullptr)))
+{}
 
 void dummy()
 {
 	while(1);
 }
 
-void shell()
+void Shell::shell()
 {
 	while (!exitShell) {
 		current_dir->get_full_path(dir_buf);
@@ -82,7 +74,7 @@ bool find_and_execute(char *cmd, bool wait)
 }
 */
 
-static void command_eval(char *cmd, char *args)
+void Shell::command_eval(char *cmd, char *args)
 {
 	if (strcmp(cmd,"help")) {
 		println("ls: List the files in the current directory. Use -h for help.");
@@ -104,7 +96,7 @@ static void command_eval(char *cmd, char *args)
 	} else if (strcmp(cmd,"ls")) {
 		printf("Not implemented");
 	} else if (strcmp(cmd,"cd")) {
-		InodeRef *ref = VFS::inst()->resolve_path(args, current_dir);
+		auto ref = VFS::inst().resolve_path(args, current_dir);
 		if (ref) {
 			if (ref->inode()->is_directory()) {
 				current_dir = ref;

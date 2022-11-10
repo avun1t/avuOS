@@ -1,8 +1,5 @@
 #include "Inode.h"
 
-Inode::Inode() : fs(nullptr), id(0)
-{}
-
 Inode::Inode(Filesystem *fs, InodeID id) : fs(fs), id(id)
 {}
 
@@ -21,12 +18,12 @@ bool Inode::is_link()
 	return false;
 }
 
-Inode* Inode::find(string name)
+DC::shared_ptr<Inode> Inode::find(string name)
 {
-	return nullptr;
+	return DC::shared_ptr<Inode>(find_rawptr(name));
 }
 
-bool Inode::is_null()
+Inode *Inode::find_rawptr(string name)
 {
 	return fs == nullptr;
 }

@@ -35,6 +35,12 @@ int kmain(uint32_t mbootptr)
 	return 0;
 }
 
+void shell_process()
+{
+	Shell shell;
+	shell.shell();
+}
+
 // called from kthread
 void kmain_late()
 {
@@ -54,7 +60,7 @@ void kmain_late()
 		while (true);
 	}
 
-	auto *ext2fs = new Ext2Filesystem(part);
+	auto *ext2fs = new Ext2Filesystem(*part);
 	if (ext2fs->superblock.version_major < 1) {
 		printf("init: Unsupported ext2 version %d.%d. Must be at least 1. Hanging.", ext2fs->superblock.version_major, ext2fs->superblock.version_minor);
 		while (true);
@@ -71,8 +77,7 @@ void kmain_late()
 		while (true);
 	}
 
-	init_shell();
-	add_process(create_process("shell", (uint32_t)shell));
+	add_process(create_process("shell", (uint32_t)shell_process));
 	while (get_process(2));
 	printf("\n\nShell exited.\n\n");
 	while (1);
