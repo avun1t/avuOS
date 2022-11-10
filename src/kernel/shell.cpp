@@ -9,26 +9,21 @@
 #include <kernel/pci/pci.h>
 #include <kernel/memory/paging.h>
 #include <kernel/device/ide.h>
+#include <kernel/filesystem/VFS.h>
 
 char cmdbuf[256];
 char argbuf[256];
-char dirbuf[512];
-char dirbuf2[512];
+char dir_buf[256];
 
 bool exitShell = false;
-//file_t currentDir = {}, fileBuf = {};
+InodeRef *current_dir;
 extern bool shell_mode;
 extern char kbdbuf[256];
-Filesystem *shellfs;
 extern bool tasking_enabled;
 
-void init_shell(Filesystem *fsp)
+void init_shell()
 {
-	shellfs = fsp;
-	//shellfs->get_file("/",&currentDir,shellfs);
-
-	dirbuf[0] = '/';
-	dirbuf[1] = '\0';
+	current_dir = VFS::inst()->root_ref();
 }
 
 void dummy()
@@ -39,7 +34,8 @@ void dummy()
 void shell()
 {
 	while (!exitShell) {
-		printf("kernel:%s$ ", dirbuf);
+		current_dir->get_full_path(dir_buf);
+		printf("kernel:%s$ ", dir_buf);
 
 		shell_mode = true;
 		get_input();
@@ -106,41 +102,21 @@ static void command_eval(char *cmd, char *args)
 		println("lspci: Lists PCI devices.");
 		println("exit: Pretty self explanatory.");
 	} else if (strcmp(cmd,"ls")) {
-		/*if (strcmp(args,"")) {
-			shellfs->list_dir(&currentDir, shellfs);
-		} else {
-			uint32_t inodeID = ext2_findFile(args, current_inode, inode_buf, ext2);
-			
-			if (!inodeID) {
-				printf("That directory does not exist.\n");
-			} else {
-				ext2_inode *inode = kmalloc(sizeof(ext2_inode));
-				ext2_read_inode(inodeID, inode, ext2);
-
-				if ((inode->type & 0xF000) != EXT2_DIRECTORY) {
-					printf("%s is not a directory.\n",args);
-				} else {
-					ext2_list_directory(inodeID, ext2);
-				}
-			}
-		}*/
+		printf("Not implemented");
 	} else if (strcmp(cmd,"cd")) {
-		/*strcpy(dirbuf, dirbuf2);
-		strcat(dirbuf2,args);
-		strcat(dirbuf2,"/");
-
-		if (!shellfs->get_file(dirbuf2, &fileBuf, shellfs)) {
-			printf("That directory does not exist.\n");
-		} else {
-			if (!fileBuf.isDirectory) {
-				printf("%s is not a directory.\n",args);
+		InodeRef *ref = VFS::inst()->resolve_path(args, current_dir);
+		if (ref) {
+			if (ref->inode()->is_directory()) {
+				current_dir = ref;
 			} else {
-				currentDir = fileBuf;
-				strcpy(dirbuf2, dirbuf);
+				printf("Could not cd to '%': Not a directory\n", args);
 			}
-		}*/
+		} else {
+			printf("Could not find '%s'\n", args);
+		}
 	} else if (strcmp(cmd,"pwd")) {
-		printf("%s\n",dirbuf);
+		current_dir->get_full_path(dir_buf);
+		printf("%s\n",dir_buf);
 	} else if (strcmp(cmd,"about")) {
 		println("avuOS 0.1");
 	} else if (strcmp(cmd,"cat")) {

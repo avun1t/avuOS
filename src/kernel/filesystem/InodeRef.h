@@ -5,13 +5,15 @@
 
 class InodeRef {
 public:
-	InodeRef(Inode &inode, string name, InodeRef *parent);
-	Inode &inode();
+	InodeRef(Inode *inode, string name, InodeRef *parent);
+	~InodeRef();
+	Inode *inode();
 	string name();
 	InodeRef *parent();
+	void get_full_path(char *buffer);
 
 private:
-	Inode &_inode;
+	Inode *_inode;
 	string _name;
 	InodeRef *_parent;
 };

@@ -72,10 +72,11 @@ void fault_handler(struct registers *r)
 			break;
 
 			case 14: //Page fault
-			if (get_current_process() == nullptr || get_current_process()->pid == 1)
+			if (get_current_process() == nullptr || get_current_process()->pid == 1) {
 				page_fault_handler(r);
-			else
+			} else {
 				notify(SIGILL);
+			}
 			break;
 
 			default:

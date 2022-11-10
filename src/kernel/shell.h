@@ -3,7 +3,7 @@
 
 #include <kernel/filesystem/Ext2.h>
 
-void init_shell(Filesystem *fsp);
+void init_shell();
 void shell();
 static void command_eval(char *cmd, char *args);
 

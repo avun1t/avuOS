@@ -1,8 +1,9 @@
 #include <kernel/filesystem/FileSystem.h>
+#include "InodeRef.h"
 
 Filesystem::Filesystem(BlockDevice *device)
 {
-    this->device = device;
+    this->_device = device;
 }
 
 const char *Filesystem::name() const
@@ -17,3 +18,13 @@ bool Filesystem::probe(BlockDevice *dev)
 
 Inode *Filesystem::get_inode(InodeID id)
 {}
+
+InodeID Filesystem::root_inode()
+{
+	return root_inode_id;
+}
+
+BlockDevice *Filesystem::device()
+{
+	return _device;
+}
