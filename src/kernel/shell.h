@@ -1,7 +1,7 @@
 #ifndef __SHELL_H_
 #define __SHELL_H_
 
-#include <filesystem/Ext2.h>
+#include <kernel/filesystem/Ext2.h>
 
 void init_shell(Filesystem *fsp);
 void shell();

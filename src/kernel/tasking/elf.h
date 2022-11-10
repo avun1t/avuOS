@@ -1,7 +1,7 @@
 #ifndef __ELF_H_
 #define __ELF_H_
 
-#include <kstddef.h>
+#include <kernel/kstddef.h>
 
 #define ELF_MAGIC 0x464C457F //0x7F followed by 'ELF'
 

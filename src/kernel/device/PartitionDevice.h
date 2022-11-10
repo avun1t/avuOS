@@ -1,7 +1,7 @@
 #ifndef __PARTITIONDEVICE_H_
 #define __PARTITIONDEVICE_H_
 
-#include <device/BlockDevice.h>
+#include <kernel/device/BlockDevice.h>
 
 class PartitionDevice : public BlockDevice {
 public:

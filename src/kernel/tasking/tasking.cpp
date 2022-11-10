@@ -1,9 +1,9 @@
-#include <tasking/tasking.h>
-#include <memory/kliballoc.h>
-#include <kstddef.h>
-#include <kstdio.h>
-#include <pit.h>
-#include <kmain.h>
+#include <kernel/tasking/tasking.h>
+#include <kernel/memory/kliballoc.h>
+#include <kernel/kstddef.h>
+#include <kernel/kstdio.h>
+#include <kernel/pit.h>
+#include <kernel/kmain.h>
 
 process_t *current_proc;
 process_t *kernel_proc;
@@ -65,7 +65,7 @@ process_t *get_process(uint32_t pid)
 	return (process_t *) nullptr;
 }
 
-void printTasks()
+void print_tasks()
 {
 	process_t *current = kernel_proc;
 	printf("Running processes: (PID, name, state, * = is current)\n");

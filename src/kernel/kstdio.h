@@ -1,7 +1,7 @@
 #ifndef __STDIO_H_
 #define __STDIO_H_
 
-#include <kstddef.h>
+#include <kernel/kstddef.h>
 
 #define ASSERT(cond)	\
 	if (!(cond)) {		\

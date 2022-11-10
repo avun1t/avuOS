@@ -1,8 +1,8 @@
 #ifndef __VFS_H_
 #define __VFS_H_
 
-#include <device/BlockDevice.h>
-#include <filesystem/Inode.h>
+#include <kernel/device/BlockDevice.h>
+#include <kernel/filesystem/Inode.h>
 
 class Inode;
 typedef uint32_t InodeID;

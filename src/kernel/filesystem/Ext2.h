@@ -1,7 +1,7 @@
 #ifndef __EXT2_H_
 #define __EXT2_H_
 
-#include <filesystem/FileSystem.h>
+#include <kernel/filesystem/FileSystem.h>
 
 // inode constants
 #define ROOT_INODE 2

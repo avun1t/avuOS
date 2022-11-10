@@ -1,6 +1,6 @@
-#include <kstddef.h>
-#include <kstdio.h>
-#include <memory/kliballoc.h>
+#include <kernel/kstddef.h>
+#include <kernel/kstdio.h>
+#include <kernel/memory/kliballoc.h>
 
 void outb(uint16_t port, uint8_t value)
 {

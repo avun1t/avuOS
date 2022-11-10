@@ -1,8 +1,8 @@
 #ifndef __INODE_H_
 #define __INODE_H_
 
-#include <kstddef.h>
-#include <filesystem/FileSystem.h>
+#include <kernel/kstddef.h>
+#include <kernel/filesystem/FileSystem.h>
 
 class Filesystem;
 typedef uint32_t InodeID;

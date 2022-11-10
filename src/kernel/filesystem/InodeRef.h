@@ -1,7 +1,7 @@
 #ifndef __INODEREF_H_
 #define __INODEREF_H_
 
-#include <filesystem/Inode.h>
+#include <kernel/filesystem/Inode.h>
 
 class InodeRef {
 public:

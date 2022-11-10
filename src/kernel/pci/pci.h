@@ -1,7 +1,7 @@
 #ifndef __PCI_H_
 #define __PCI_H_
 
-#include <kstddef.h>
+#include <kernel/kstddef.h>
 
 // Ports
 #define PCI_ADDRESS_PORT 0xCF8

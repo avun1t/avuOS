@@ -1,7 +1,7 @@
 #ifndef __IDE_H_
 #define __IDE_H_
 
-#include <pci/pci.h>
+#include <kernel/pci/pci.h>
 
 #define ATA_PRIMARY 0x0
 #define ATA_SECONDARY 0x1
