@@ -3,10 +3,11 @@
 #include <kernel/kstdio.h>
 #include <kernel/filesystem/Ext2.h>
 #include <kernel/filesystem/FileSystem.h>
+#include <common/cstring.h>
 
 extern uint8_t ata_buf[512], ata_buf2[512];
 
-Ext2Filesystem::Ext2Filesystem(BlockDevice *device) : Filesystem(device)
+Ext2Filesystem::Ext2Filesystem(BlockDevice &device) : Filesystem(device)
 {
 	get_superblock(&superblock);
 	
@@ -164,7 +165,7 @@ bool Ext2Inode::is_link()
 	return (raw.type & 0xF000) == EXT2_SYMLINK;
 }
 
-Inode *Ext2Inode::find_rawptr(string find_name)
+Inode *Ext2Inode::find_rawptr(DC::string find_name)
 {
 	Inode *ret = nullptr;
 
@@ -185,7 +186,7 @@ Inode *Ext2Inode::find_rawptr(string find_name)
 				
 				name_buf[dir->name_length] = '\0';
 				
-				if (strcmp(find_name, name_buf)) {
+				if (find_name == name_buf) {
 					ret = ext2fs().get_inode_rawptr(dir->inode);
 				}
 

@@ -114,7 +114,7 @@ void keyboard_handler(struct registers *r)
 			return;
 		}
 
-		if (is_a_character(kbdus[scancode])) {
+		if (kbdus[scancode] >= 0x20 && kbdus[scancode] <= 0x7E) {
 			if (shift) {
 				putch(kbdus[scancode+90]);
 				if (input_mode) {

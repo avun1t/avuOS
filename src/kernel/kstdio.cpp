@@ -1,6 +1,7 @@
 #include <kernel/kstddef.h>
 #include <kernel/kstdio.h>
 #include <kernel/memory/paging.h>
+#include <common/stdlib.h>
 
 int xpos = 0;
 int ypos = 0;
@@ -103,7 +104,7 @@ void print_hex(uint8_t num)
 {
 	char *str = "  ";
 
-	num_to_hex_string(num, str);
+	itoa(num, str, 16);
 	print("0x");
 	print(str);
 }
@@ -113,9 +114,9 @@ void print_hexw(uint16_t num)
 	char *str = "  ";
 
 	print("0x");
-	num_to_hex_string(num >> 8, str);
+	itoa(num >> 8, str, 16);
 	print(str);
-	num_to_hex_string(num, str);
+	itoa(num, str, 16);
 	print(str);
 }
 
@@ -124,13 +125,13 @@ void print_hexl(uint32_t num)
 	char *str = "  ";
 
 	print("0x");
-	num_to_hex_string(num >> 24, str);
+	itoa(num >> 24, str, 16);
 	print(str);
-	num_to_hex_string(num >> 16, str);
+	itoa(num >> 16, str, 16);
 	print(str);
-	num_to_hex_string(num >> 8, str);
+	itoa(num >> 8, str, 16);
 	print(str);
-	num_to_hex_string(num, str);
+	itoa(num, str, 16);
 	print(str);
 }
 

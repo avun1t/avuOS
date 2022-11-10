@@ -4,6 +4,7 @@
 #include <kernel/kstdio.h>
 #include <kernel/pit.h>
 #include <kernel/kmain.h>
+#include <common/cstring.h>
 
 process_t *current_proc;
 process_t *kernel_proc;

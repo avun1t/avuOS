@@ -10,12 +10,14 @@
 #include <kernel/memory/paging.h>
 #include <kernel/device/ide.h>
 #include <kernel/filesystem/VFS.h>
+#include <common/cstring.h>
+#include <common/stdlib.h>
 
 extern bool shell_mode;
 extern char kbdbuf[256];
 extern bool tasking_enabled;
 
-Shell::Shell() : current_dir(VFS::inst().resolve_path("/", DC::shared_ptr<InodeRef>(nullptr)))
+Shell::Shell() : current_dir(VFS::inst().resolve_path("/", DC::shared_ptr<LinkedInode>(nullptr)))
 {}
 
 void dummy()
@@ -26,8 +28,7 @@ void dummy()
 void Shell::shell()
 {
 	while (!exitShell) {
-		current_dir->get_full_path(dir_buf);
-		printf("kernel:%s$ ", dir_buf);
+		printf("kernel:%s$ ", current_dir->get_full_path().c_str());
 
 		shell_mode = true;
 		get_input();
@@ -107,8 +108,7 @@ void Shell::command_eval(char *cmd, char *args)
 			printf("Could not find '%s'\n", args);
 		}
 	} else if (strcmp(cmd,"pwd")) {
-		current_dir->get_full_path(dir_buf);
-		printf("%s\n",dir_buf);
+		printf("%s\n", current_dir->get_full_path().c_str());
 	} else if (strcmp(cmd,"about")) {
 		println("avuOS 0.1");
 	} else if (strcmp(cmd,"cat")) {
@@ -147,7 +147,7 @@ void Shell::command_eval(char *cmd, char *args)
 			printf("Cannot find \"%s\".\n", args);
 		}*/
 	} else if (strcmp(cmd,"kill")) {
-		uint32_t pid = str_to_int(args);
+		uint32_t pid = atoi(args);
 		process_t *proc = get_process(pid);
 
 		if (proc != NULL && proc->pid != 1) {

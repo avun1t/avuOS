@@ -2,10 +2,11 @@
 #define __STDIO_H_
 
 #include <kernel/kstddef.h>
+#include <common/string.h>
 
-#define ASSERT(cond)	\
-	if (!(cond)) {		\
-		PANIC("Assertion failed: ", __FILE__ " at line " STR(__LINE__), true);	\
+#define ASSERT(cond) \
+	if(!(cond)) { 			\
+		PANIC("Assertion failed: ", __FILE__ " at line " STR(__LINE__), true); \
 	}
 
 #define SCREEN_CHAR_WIDTH 80

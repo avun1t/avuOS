@@ -12,7 +12,7 @@ class Filesystem {
 public:
 	virtual const char *name() const;
 	static bool probe(BlockDevice &dev);
-	virtual DC::shared_ptr<Inode> *get_inode(InodeID id);
+	virtual DC::shared_ptr<Inode> get_inode(InodeID id);
 	virtual Inode *get_inode_rawptr(InodeID id);
 	Filesystem(BlockDevice &device);
 	InodeID root_inode();

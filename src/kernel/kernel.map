@@ -1,0 +1,1440 @@
+
+Merging program properties
+
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (0x1) and CMakeFiles/yuku32.dir/asm/startup.s.o (not found)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (0x0) and CMakeFiles/yuku32.dir/asm/startup.s.o (not found)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/pit.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/pit.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/shell.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/shell.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/kstdio.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/kstdio.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/keyboard.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/keyboard.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/kstddef.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/kstddef.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/ata.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/ata.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/elf.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/elf.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/tasking.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/tasking.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/tss.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/tasking/tss.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/pci/pci.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/pci/pci.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/gdt.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/gdt.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/paging.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/paging.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/idt.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/idt.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/irq.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/irq.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/isr.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/isr.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/ide.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/ide.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/Device.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/Device.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/PIODevice.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/PIODevice.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/File.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/filesystem/File.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/cstring.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/cstring.cpp.o (0x0)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o (0x9)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o (0x1)
+Removed property 0xc0010001 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/string.cpp.o (0x1)
+Removed property 0xc0010002 to merge CMakeFiles/yuku32.dir/kmain.cpp.o (not found) and CMakeFiles/yuku32.dir/__/common/string.cpp.o (0x0)
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/pit.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/pit.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/pit.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/pit.cpp.o
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/pit.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/pit.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/shell.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeED2Ev
+                0x0000000000000000       0x21 CMakeFiles/yuku32.dir/shell.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7releaseEv
+                0x0000000000000000       0x34 CMakeFiles/yuku32.dir/shell.cpp.o
+ .text._ZN2DC16shared_ptr_count7releaseI11LinkedInodeEEvPT_
+                0x0000000000000000       0x75 CMakeFiles/yuku32.dir/shell.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/shell.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/shell.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/shell.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .text.__x86.get_pc_thunk.cx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .text.__x86.get_pc_thunk.cx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .text._ZN2DC16shared_ptr_countC2Ev
+                0x0000000000000000       0x19 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .text._ZN2DC16shared_ptr_countC2Ev
+                0x0000000000000000       0x19 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeEC2EPS1_
+                0x0000000000000000       0x36 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeE7acquireEPS1_
+                0x0000000000000000       0x30 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .text._ZN2DC16shared_ptr_count7acquireI5InodeEEvPT_
+                0x0000000000000000       0x4e CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC16shared_ptr_countC2ERKS0_
+                0x0000000000000000       0x1a CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeED2Ev
+                0x0000000000000000       0x21 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2ERKS2_
+                0x0000000000000000       0x40 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeED2Ev
+                0x0000000000000000       0x21 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeE7acquireEPS1_
+                0x0000000000000000       0x30 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeE7releaseEv
+                0x0000000000000000       0x34 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7acquireEPS1_
+                0x0000000000000000       0x30 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7releaseEv
+                0x0000000000000000       0x34 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC16shared_ptr_count7acquireI5InodeEEvPT_
+                0x0000000000000000       0x4e CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC16shared_ptr_count7releaseI5InodeEEvPT_
+                0x0000000000000000       0x69 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC16shared_ptr_count7acquireI11LinkedInodeEEvPT_
+                0x0000000000000000       0x4e CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text._ZN2DC16shared_ptr_count7releaseI11LinkedInodeEEvPT_
+                0x0000000000000000       0x79 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0xc CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_countC2Ev
+                0x0000000000000000       0x19 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_countC2ERKS0_
+                0x0000000000000000       0x1a CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_count4swapERS0_
+                0x0000000000000000       0x26 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZNK2DC16shared_ptr_count9use_countEv
+                0x0000000000000000       0x2f CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC4swapIPlEEvRT_S3_
+                0x0000000000000000       0x51 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeED2Ev
+                0x0000000000000000       0x21 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeED2Ev
+                0x0000000000000000       0x21 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeEC2ERKS2_
+                0x0000000000000000       0x40 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZNK2DC10shared_ptrI5InodeEptEv
+                0x0000000000000000       0x14 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2EPS1_
+                0x0000000000000000       0x36 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2ERKS2_
+                0x0000000000000000       0x40 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeEaSES2_
+                0x0000000000000000       0x26 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZNK2DC10shared_ptrI11LinkedInodeEptEv
+                0x0000000000000000       0x14 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZNK2DC10shared_ptrI11LinkedInodeEcvbEv
+                0x0000000000000000       0x29 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC4moveIRPlEEONS_16remove_referenceIT_E4typeEOS4_
+                0x0000000000000000       0x12 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeE7releaseEv
+                0x0000000000000000       0x34 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7releaseEv
+                0x0000000000000000       0x34 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI5InodeE7acquireEPS1_
+                0x0000000000000000       0x30 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7acquireEPS1_
+                0x0000000000000000       0x30 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC10shared_ptrI11LinkedInodeE4swapERS2_
+                0x0000000000000000       0x3f CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_count7releaseI5InodeEEvPT_
+                0x0000000000000000       0x69 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_count7releaseI11LinkedInodeEEvPT_
+                0x0000000000000000       0x75 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_count7acquireI5InodeEEvPT_
+                0x0000000000000000       0x4e CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC16shared_ptr_count7acquireI11LinkedInodeEEvPT_
+                0x0000000000000000       0x4e CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC4swapIP11LinkedInodeEEvRT_S4_
+                0x0000000000000000       0x51 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text._ZN2DC4moveIRP11LinkedInodeEEONS_16remove_referenceIT_E4typeEOS5_
+                0x0000000000000000       0x12 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+ .group         0x0000000000000000        0x8 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+ .note.gnu.property
+                0x0000000000000000       0x28 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD CMakeFiles/yuku32.dir/asm/startup.s.o
+LOAD CMakeFiles/yuku32.dir/kmain.cpp.o
+LOAD CMakeFiles/yuku32.dir/pit.cpp.o
+LOAD CMakeFiles/yuku32.dir/shell.cpp.o
+LOAD CMakeFiles/yuku32.dir/kstdio.cpp.o
+LOAD CMakeFiles/yuku32.dir/keyboard.cpp.o
+LOAD CMakeFiles/yuku32.dir/kstddef.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/ata.cpp.o
+LOAD CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+LOAD CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+LOAD CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+LOAD CMakeFiles/yuku32.dir/pci/pci.cpp.o
+LOAD CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+LOAD CMakeFiles/yuku32.dir/memory/paging.cpp.o
+LOAD CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+LOAD CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+LOAD CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+LOAD CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/ide.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/Device.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+LOAD CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+LOAD CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+LOAD CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+LOAD CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+LOAD CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+LOAD CMakeFiles/yuku32.dir/__/common/string.cpp.o
+                0x00000000c0100000                . = 0xc0100000
+                0x00000000c0100000                PROVIDE (_KERNEL_START = .)
+
+.text           0x00000000c0100000     0x8a23 load address 0x0000000000100000
+ *(.text*)
+ .text          0x00000000c0100000      0x262 CMakeFiles/yuku32.dir/asm/startup.s.o
+                0x00000000c0100018                start
+                0x00000000c0100067                gdt_flush
+                0x00000000c0100085                syscall_handler
+                0x00000000c010008f                idt_load
+                0x00000000c0100097                isr0
+                0x00000000c010009f                isr1
+                0x00000000c01000a7                isr2
+                0x00000000c01000af                isr3
+                0x00000000c01000b7                isr4
+                0x00000000c01000bf                isr5
+                0x00000000c01000c7                isr6
+                0x00000000c01000cf                isr7
+                0x00000000c01000d7                isr8
+                0x00000000c01000df                isr9
+                0x00000000c01000e7                isr10
+                0x00000000c01000ef                isr11
+                0x00000000c01000f4                isr12
+                0x00000000c01000f9                isr13
+                0x00000000c01000fe                isr14
+                0x00000000c0100103                isr15
+                0x00000000c0100108                isr16
+                0x00000000c010010d                isr17
+                0x00000000c0100112                isr18
+                0x00000000c0100117                isr19
+                0x00000000c010011e                isr20
+                0x00000000c0100125                isr21
+                0x00000000c010012c                isr22
+                0x00000000c0100133                isr23
+                0x00000000c010013a                isr24
+                0x00000000c0100141                isr25
+                0x00000000c0100148                isr26
+                0x00000000c010014f                isr27
+                0x00000000c0100156                isr28
+                0x00000000c010015d                isr29
+                0x00000000c0100164                isr30
+                0x00000000c010016b                isr31
+                0x00000000c010019b                irq0
+                0x00000000c01001b4                irq1
+                0x00000000c01001bb                irq2
+                0x00000000c01001c2                irq3
+                0x00000000c01001c9                irq4
+                0x00000000c01001d0                irq5
+                0x00000000c01001d7                irq6
+                0x00000000c01001de                irq7
+                0x00000000c01001e5                irq8
+                0x00000000c01001ec                irq9
+                0x00000000c01001f3                irq10
+                0x00000000c01001fa                irq11
+                0x00000000c0100201                irq12
+                0x00000000c0100208                irq13
+                0x00000000c010020f                irq14
+                0x00000000c0100216                irq15
+                0x00000000c0100246                _iret
+                0x00000000c0100247                load_page_dir
+ .text          0x00000000c0100262      0x3a5 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100262                kmain
+                0x00000000c01002a4                shell_process()
+                0x00000000c01002f4                kmain_late()
+                0x00000000c0100532                parse_mboot(unsigned int)
+                0x00000000c0100585                interrupts_init()
+ *fill*         0x00000000c0100607        0x1 
+ .text._ZN5ShellD2Ev
+                0x00000000c0100608       0x27 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100608                Shell::~Shell()
+                0x00000000c0100608                Shell::~Shell()
+ *fill*         0x00000000c010062f        0x1 
+ .text._ZN2DC10shared_ptrI11LinkedInodeED2Ev
+                0x00000000c0100630       0x21 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100630                DC::shared_ptr<LinkedInode>::~shared_ptr()
+                0x00000000c0100630                DC::shared_ptr<LinkedInode>::~shared_ptr()
+ *fill*         0x00000000c0100651        0x1 
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7releaseEv
+                0x00000000c0100652       0x34 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100652                DC::shared_ptr<LinkedInode>::release()
+ .text._ZN2DC16shared_ptr_count7releaseI11LinkedInodeEEvPT_
+                0x00000000c0100686       0x75 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100686                void DC::shared_ptr_count::release<LinkedInode>(LinkedInode*)
+ .text.__x86.get_pc_thunk.ax
+                0x00000000c01006fb        0x4 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c01006fb                __x86.get_pc_thunk.ax
+ .text.__x86.get_pc_thunk.dx
+                0x00000000c01006ff        0x4 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c01006ff                __x86.get_pc_thunk.dx
+ .text.__x86.get_pc_thunk.bx
+                0x00000000c0100703        0x4 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0100703                __x86.get_pc_thunk.bx
+ .text          0x00000000c0100707      0x110 CMakeFiles/yuku32.dir/pit.cpp.o
+                0x00000000c0100707                pit_handler()
+                0x00000000c0100792                pit_init(unsigned int)
+ .text.__x86.get_pc_thunk.cx
+                0x00000000c0100817        0x4 CMakeFiles/yuku32.dir/pit.cpp.o
+                0x00000000c0100817                __x86.get_pc_thunk.cx
+ *fill*         0x00000000c010081b        0x1 
+ .text          0x00000000c010081c      0x9e4 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c010081c                Shell::Shell()
+                0x00000000c010081c                Shell::Shell()
+                0x00000000c01008ed                dummy()
+                0x00000000c01008fc                Shell::shell()
+                0x00000000c0100b82                Shell::command_eval(char*, char*)
+ .text._ZN2DC16shared_ptr_countC2Ev
+                0x00000000c0101200       0x19 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101200                DC::shared_ptr_count::shared_ptr_count()
+                0x00000000c0101200                DC::shared_ptr_count::shared_ptr_count()
+ *fill*         0x00000000c0101219        0x1 
+ .text._ZN2DC16shared_ptr_countC2ERKS0_
+                0x00000000c010121a       0x1a CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c010121a                DC::shared_ptr_count::shared_ptr_count(DC::shared_ptr_count const&)
+                0x00000000c010121a                DC::shared_ptr_count::shared_ptr_count(DC::shared_ptr_count const&)
+ .text._ZN2DC16shared_ptr_count4swapERS0_
+                0x00000000c0101234       0x26 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101234                DC::shared_ptr_count::swap(DC::shared_ptr_count&)
+ .text._ZNK2DC16shared_ptr_count9use_countEv
+                0x00000000c010125a       0x2f CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c010125a                DC::shared_ptr_count::use_count() const
+ .text._ZN2DC4swapIPlEEvRT_S3_
+                0x00000000c0101289       0x51 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101289                void DC::swap<long*>(long*&, long*&)
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2EPS1_
+                0x00000000c01012da       0x36 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01012da                DC::shared_ptr<LinkedInode>::shared_ptr(LinkedInode*)
+                0x00000000c01012da                DC::shared_ptr<LinkedInode>::shared_ptr(LinkedInode*)
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2ERKS2_
+                0x00000000c0101310       0x40 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101310                DC::shared_ptr<LinkedInode>::shared_ptr(DC::shared_ptr<LinkedInode> const&)
+                0x00000000c0101310                DC::shared_ptr<LinkedInode>::shared_ptr(DC::shared_ptr<LinkedInode> const&)
+ .text._ZNK2DC10shared_ptrI11LinkedInodeEptEv
+                0x00000000c0101350       0x14 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101350                DC::shared_ptr<LinkedInode>::operator->() const
+ .text._ZNK2DC10shared_ptrI11LinkedInodeEcvbEv
+                0x00000000c0101364       0x29 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101364                DC::shared_ptr<LinkedInode>::operator bool() const
+ *fill*         0x00000000c010138d        0x1 
+ .text._ZN2DC10shared_ptrI5InodeED2Ev
+                0x00000000c010138e       0x21 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c010138e                DC::shared_ptr<Inode>::~shared_ptr()
+                0x00000000c010138e                DC::shared_ptr<Inode>::~shared_ptr()
+ *fill*         0x00000000c01013af        0x1 
+ .text._ZNK2DC10shared_ptrI5InodeEptEv
+                0x00000000c01013b0       0x14 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01013b0                DC::shared_ptr<Inode>::operator->() const
+ .text._ZN2DC10shared_ptrI11LinkedInodeEaSES2_
+                0x00000000c01013c4       0x26 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01013c4                DC::shared_ptr<LinkedInode>::operator=(DC::shared_ptr<LinkedInode>)
+ .text._ZN2DC4moveIRPlEEONS_16remove_referenceIT_E4typeEOS4_
+                0x00000000c01013ea       0x12 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01013ea                DC::remove_reference<long*&>::type&& DC::move<long*&>(long*&)
+ .text._ZN2DC10shared_ptrI11LinkedInodeE7acquireEPS1_
+                0x00000000c01013fc       0x30 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01013fc                DC::shared_ptr<LinkedInode>::acquire(LinkedInode*)
+ .text._ZN2DC10shared_ptrI5InodeE7releaseEv
+                0x00000000c010142c       0x34 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c010142c                DC::shared_ptr<Inode>::release()
+ .text._ZN2DC10shared_ptrI11LinkedInodeE4swapERS2_
+                0x00000000c0101460       0x3f CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101460                DC::shared_ptr<LinkedInode>::swap(DC::shared_ptr<LinkedInode>&)
+ *fill*         0x00000000c010149f        0x1 
+ .text._ZN2DC16shared_ptr_count7acquireI11LinkedInodeEEvPT_
+                0x00000000c01014a0       0x4e CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01014a0                void DC::shared_ptr_count::acquire<LinkedInode>(LinkedInode*)
+ .text._ZN2DC16shared_ptr_count7releaseI5InodeEEvPT_
+                0x00000000c01014ee       0x69 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01014ee                void DC::shared_ptr_count::release<Inode>(Inode*)
+ .text._ZN2DC4swapIP11LinkedInodeEEvRT_S4_
+                0x00000000c0101557       0x51 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c0101557                void DC::swap<LinkedInode*>(LinkedInode*&, LinkedInode*&)
+ .text._ZN2DC4moveIRP11LinkedInodeEEONS_16remove_referenceIT_E4typeEOS5_
+                0x00000000c01015a8       0x12 CMakeFiles/yuku32.dir/shell.cpp.o
+                0x00000000c01015a8                DC::remove_reference<LinkedInode*&>::type&& DC::move<LinkedInode*&>(LinkedInode*&)
+ .text          0x00000000c01015ba      0xad5 CMakeFiles/yuku32.dir/kstdio.cpp.o
+                0x00000000c01015ba                putch(char)
+                0x00000000c01015fb                print_color(char*, char)
+                0x00000000c0101650                print(char*)
+                0x00000000c010167c                println_color(char*, char)
+                0x00000000c01016c4                println(char*)
+                0x00000000c01016f0                set_color(char)
+                0x00000000c0101713                center_print_base(char*, char, int)
+                0x00000000c0101882                print_hex(unsigned char)
+                0x00000000c01018de                print_hexw(unsigned short)
+                0x00000000c0101965                print_hexl(unsigned int)
+                0x00000000c0101a29                print_num(int)
+                0x00000000c0101a65                printf(char*, ...)
+                0x00000000c0101c55                backspace()
+                0x00000000c0101ca7                PANIC(char*, char*, bool)
+                0x00000000c0101d24                putch_color(char, char)
+                0x00000000c0101e3f                clear_screen()
+                0x00000000c0101eb2                set_all_color(char)
+                0x00000000c0101f2b                center_print(char*, char)
+                0x00000000c0101f59                update_cursor()
+                0x00000000c0101fe9                scroll()
+ .text          0x00000000c010208f      0x240 CMakeFiles/yuku32.dir/keyboard.cpp.o
+                0x00000000c010208f                keyboard_handler(registers*)
+                0x00000000c0102266                get_input()
+ .text          0x00000000c01022cf      0x3dc CMakeFiles/yuku32.dir/kstddef.cpp.o
+                0x00000000c01022cf                outb(unsigned short, unsigned char)
+                0x00000000c01022f8                outw(unsigned short, unsigned short)
+                0x00000000c0102323                outl(unsigned short, unsigned int)
+                0x00000000c0102345                inb(unsigned short)
+                0x00000000c010236c                inw(unsigned short)
+                0x00000000c0102395                inl(unsigned short)
+                0x00000000c01023bb                index_of(char, char*)
+                0x00000000c0102419                index_of_n(char, int, char*)
+                0x00000000c010248a                count_of(char, char*)
+                0x00000000c01024ea                contains(char*, char*)
+                0x00000000c010259a                cli()
+                0x00000000c01025ab                sti()
+                0x00000000c01025bc                to_upper(char*)
+                0x00000000c0102601                operator new(unsigned int)
+                0x00000000c0102627                operator new[](unsigned int)
+                0x00000000c010264d                operator delete(void*)
+                0x00000000c0102674                operator delete[](void*)
+                0x00000000c010269b                __cxa_pure_virtual
+ .text          0x00000000c01026ab      0x225 CMakeFiles/yuku32.dir/device/ata.cpp.o
+                0x00000000c01026ab                pio_prepare_disk(int, int)
+                0x00000000c0102795                pio_read_sector(int, int, unsigned char*)
+                0x00000000c0102816                pio_read_sectors(int, int, int, unsigned char*)
+                0x00000000c0102864                pio_get_first_partition(int)
+ .text          0x00000000c01028d0        0x0 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .text          0x00000000c01028d0      0x5e6 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+                0x00000000c01028d0                kthread()
+                0x00000000c01028f1                create_process(char*, unsigned int)
+                0x00000000c0102a79                get_process(unsigned int)
+                0x00000000c0102abd                print_tasks()
+                0x00000000c0102b46                __init__()
+                0x00000000c0102b79                preempt_now()
+                0x00000000c0102b9b                __kill__()
+                0x00000000c0102c4f                __notify__(unsigned int)
+                0x00000000c0102c9d                init_tasking()
+                0x00000000c0102d1e                get_current_process()
+                0x00000000c0102d33                add_process(process_t*)
+                0x00000000c0102d99                notify(unsigned int)
+                0x00000000c0102dc0                kill(process_t*)
+                0x00000000c0102e46                preempt
+ .text          0x00000000c0102eb6        0x0 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .text          0x00000000c0102eb6      0x78a CMakeFiles/yuku32.dir/pci/pci.cpp.o
+                0x00000000c0102eb6                PCI::read_byte(PCI::Address, unsigned char)
+                0x00000000c0102f0f                PCI::read_word(PCI::Address, unsigned char)
+                0x00000000c0102f72                PCI::read_dword(PCI::Address, unsigned char)
+                0x00000000c0102fcb                PCI::write_byte(PCI::Address, unsigned char, unsigned char)
+                0x00000000c010303a                PCI::write_word(PCI::Address, unsigned char, unsigned short)
+                0x00000000c01030ad                PCI::write_dword(PCI::Address, unsigned char, unsigned int)
+                0x00000000c010310e                PCI::enable_interrupt(PCI::Address)
+                0x00000000c0103177                PCI::disable_interrupt(PCI::Address)
+                0x00000000c01031e0                PCI::enumerate_devices(void (*)(PCI::Address, PCI::ID, void*), void*)
+                0x00000000c01032a1                PCI::enumerate_bus(unsigned char, void (*)(PCI::Address, PCI::ID, void*), void*)
+                0x00000000c01032e9                PCI::enumerate_slot(unsigned char, unsigned char, void (*)(PCI::Address, PCI::ID, void*), void*)
+                0x00000000c01033fd                PCI::enumerate_functions(unsigned char, unsigned char, unsigned char, void (*)(PCI::Address, PCI::ID, void*), void*)
+                0x00000000c010354d                PCI::get_class(PCI::Address)
+                0x00000000c010357f                PCI::get_subclass(PCI::Address)
+                0x00000000c01035b2                PCI::Address::get_io_address(unsigned char)
+ .text          0x00000000c0103640      0x139 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+                0x00000000c0103640                gdt_set_gate(unsigned int, unsigned short, unsigned int, unsigned char, unsigned char)
+                0x00000000c01036c9                load_gdt()
+ *fill*         0x00000000c0103779        0x1 
+ .text          0x00000000c010377a      0xddc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c010377a                setup_paging()
+                0x00000000c0103a94                PageDirectory::Data::set_address(unsigned int)
+                0x00000000c0103af4                PageDirectory::Data::get_address()
+                0x00000000c0103b26                PageTable::Data::set_address(unsigned int)
+                0x00000000c0103b86                PageTable::Data::get_address()
+                0x00000000c0103bb7                page_fault_handler(registers*)
+                0x00000000c0103d13                get_used_mem()
+                0x00000000c0103d3a                early_pagetable_setup(PageTable*, unsigned int, bool)
+                0x00000000c0103e09                map_page(unsigned int, unsigned int, bool, bool)
+                0x00000000c0103f5d                map_page(unsigned int, unsigned int, bool)
+                0x00000000c0103f8b                map_pages(unsigned int, unsigned int, bool, unsigned int, bool)
+                0x00000000c0103ff1                map_pages(unsigned int, unsigned int, bool, unsigned int)
+                0x00000000c0104025                alloc_page_table(unsigned int, bool)
+                0x00000000c0104134                dealloc_page_table(unsigned int)
+                0x00000000c01041ac                alloc_page_table(unsigned int)
+                0x00000000c01041ce                liballoc_lock()
+                0x00000000c01041f0                liballoc_unlock()
+                0x00000000c0104212                liballoc_alloc(int)
+                0x00000000c01042ef                liballoc_free(void*, int)
+                0x00000000c0104362                unmap_page(unsigned int)
+                0x00000000c0104456                unmap_pages(unsigned int, unsigned int)
+                0x00000000c0104499                get_physaddr(unsigned int)
+ .text._ZN12MemoryBitmapILi1048576EE13set_page_usedEj
+                0x00000000c0104556       0x4c CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c0104556                MemoryBitmap<1048576>::set_page_used(unsigned int)
+ .text._ZN12MemoryBitmapILi1048576EE10used_pagesEv
+                0x00000000c01045a2       0x18 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c01045a2                MemoryBitmap<1048576>::used_pages()
+ .text._ZN12MemoryBitmapILi1048576EE12is_page_usedEj
+                0x00000000c01045ba       0x31 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c01045ba                MemoryBitmap<1048576>::is_page_used(unsigned int)
+ *fill*         0x00000000c01045eb        0x1 
+ .text._ZN12MemoryBitmapILi1048576EE14allocate_pagesEjj
+                0x00000000c01045ec       0x5a CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c01045ec                MemoryBitmap<1048576>::allocate_pages(unsigned int, unsigned int)
+ .text._ZN12MemoryBitmapILi1048576EE13set_page_freeEj
+                0x00000000c0104646       0x4e CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c0104646                MemoryBitmap<1048576>::set_page_free(unsigned int)
+ .text._ZN12MemoryBitmapILi1048576EE10find_pagesEjj
+                0x00000000c0104694       0xbc CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c0104694                MemoryBitmap<1048576>::find_pages(unsigned int, unsigned int)
+ .text._ZN12MemoryBitmapILi1048576EE13find_one_pageEj
+                0x00000000c0104750       0x7f CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c0104750                MemoryBitmap<1048576>::find_one_page(unsigned int)
+ .text          0x00000000c01047cf       0xc3 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+                0x00000000c01047cf                idt_set_gate(unsigned char, unsigned int, unsigned short, unsigned char)
+                0x00000000c0104847                register_idt()
+ .text          0x00000000c0104892      0x300 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+                0x00000000c0104892                irq_add_handler(int, void (*)(registers*))
+                0x00000000c01048af                irq_remove_handler(int)
+                0x00000000c01048cd                irq_remap()
+                0x00000000c010498a                irq_init()
+                0x00000000c0104b27                irq_handler
+ .text          0x00000000c0104b92      0x5c2 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+                0x00000000c0104b92                isr_init()
+                0x00000000c0104eaa                fpanic(char*, char*, unsigned int)
+                0x00000000c0104f05                fault_handler
+                0x00000000c0105062                print_regs(registers*)
+ .text          0x00000000c0105154       0x9e CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+                0x00000000c0105154                int_syscall_handler
+ .text          0x00000000c01051f2      0xa43 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+                0x00000000c01051f2                Ext2Filesystem::Ext2Filesystem(BlockDevice&)
+                0x00000000c01051f2                Ext2Filesystem::Ext2Filesystem(BlockDevice&)
+                0x00000000c010533e                Ext2Filesystem::probe(BlockDevice*)
+                0x00000000c010537e                Ext2Filesystem::get_superblock(ext2_superblock*)
+                0x00000000c01053d4                Ext2Filesystem::read_block(unsigned int, unsigned char*)
+                0x00000000c010542c                Ext2Filesystem::read_slink(unsigned int, unsigned char*)
+                0x00000000c01054f6                Ext2Filesystem::read_dlink(unsigned int, unsigned char*)
+                0x00000000c01055cc                Ext2Filesystem::block_to_sector(unsigned int)
+                0x00000000c01055ec                Ext2Filesystem::get_inode_rawptr(unsigned int)
+                0x00000000c010563c                Ext2Filesystem::name() const
+                0x00000000c0105652                Ext2Inode::Ext2Inode(Ext2Filesystem&, unsigned int)
+                0x00000000c0105652                Ext2Inode::Ext2Inode(Ext2Filesystem&, unsigned int)
+                0x00000000c010568c                Ext2Inode::get_block_group()
+                0x00000000c01056c6                Ext2Inode::get_index()
+                0x00000000c0105702                Ext2Inode::get_block()
+                0x00000000c010575e                Ext2Inode::read_raw()
+                0x00000000c010589c                Ext2Inode::read(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0105a20                Ext2Inode::is_directory()
+                0x00000000c0105a46                Ext2Inode::is_link()
+                0x00000000c0105a6c                Ext2Inode::find_rawptr(DC::string)
+                0x00000000c0105c20                Ext2Inode::ext2fs()
+ *fill*         0x00000000c0105c35        0x1 
+ .text          0x00000000c0105c36      0x1a3 CMakeFiles/yuku32.dir/device/ide.cpp.o
+                0x00000000c0105c36                IDE::PATAChannel::PATAChannel(PCI::Address, unsigned char)
+                0x00000000c0105c36                IDE::PATAChannel::PATAChannel(PCI::Address, unsigned char)
+                0x00000000c0105c6a                IDE::PATAChannel::init()
+                0x00000000c0105d6b                IDE::find_pata_channel(unsigned char)
+ *fill*         0x00000000c0105dd9        0x1 
+ .text          0x00000000c0105dda       0x10 CMakeFiles/yuku32.dir/device/Device.cpp.o
+                0x00000000c0105dda                Device::Device()
+                0x00000000c0105dda                Device::Device()
+ .text          0x00000000c0105dea      0x278 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+                0x00000000c0105dea                BlockDevice::BlockDevice()
+                0x00000000c0105dea                BlockDevice::BlockDevice()
+                0x00000000c0105e1c                BlockDevice::read_block(unsigned int, unsigned char*)
+                0x00000000c0105e46                BlockDevice::write_block(unsigned int, unsigned char*)
+                0x00000000c0105e72                BlockDevice::read_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0105e86                BlockDevice::write_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0105e9a                BlockDevice::read(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0105f72                BlockDevice::write(unsigned int, unsigned int, unsigned char*)
+                0x00000000c010604e                BlockDevice::block_size()
+ .text          0x00000000c0106062       0xa6 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+                0x00000000c0106062                PIODevice::PIODevice(unsigned char)
+                0x00000000c0106062                PIODevice::PIODevice(unsigned char)
+                0x00000000c01060a4                PIODevice::read_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c01060e0                PIODevice::write_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c01060f4                PIODevice::block_size()
+ .text          0x00000000c0106108       0xe6 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                0x00000000c0106108                Inode::Inode(Filesystem&, unsigned int)
+                0x00000000c0106108                Inode::Inode(Filesystem&, unsigned int)
+                0x00000000c0106136                Inode::read(unsigned int, unsigned int, unsigned char*)
+                0x00000000c010614a                Inode::is_directory()
+                0x00000000c010615e                Inode::is_link()
+                0x00000000c0106172                Inode::find(DC::string)
+                0x00000000c01061da                Inode::find_rawptr(DC::string)
+ .text._ZN2DC10shared_ptrI5InodeEC2EPS1_
+                0x00000000c01061ee       0x36 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                0x00000000c01061ee                DC::shared_ptr<Inode>::shared_ptr(Inode*)
+                0x00000000c01061ee                DC::shared_ptr<Inode>::shared_ptr(Inode*)
+ .text._ZN2DC10shared_ptrI5InodeE7acquireEPS1_
+                0x00000000c0106224       0x30 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                0x00000000c0106224                DC::shared_ptr<Inode>::acquire(Inode*)
+ .text._ZN2DC16shared_ptr_count7acquireI5InodeEEvPT_
+                0x00000000c0106254       0x4e CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                0x00000000c0106254                void DC::shared_ptr_count::acquire<Inode>(Inode*)
+ .text          0x00000000c01062a2       0xf2 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+                0x00000000c01062a2                PartitionDevice::PartitionDevice(BlockDevice*, unsigned int)
+                0x00000000c01062a2                PartitionDevice::PartitionDevice(BlockDevice*, unsigned int)
+                0x00000000c01062e6                PartitionDevice::read_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0106324                PartitionDevice::write_blocks(unsigned int, unsigned int, unsigned char*)
+                0x00000000c0106366                PartitionDevice::block_size()
+ .text          0x00000000c0106394       0xe1 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+                0x00000000c0106394                Filesystem::Filesystem(BlockDevice&)
+                0x00000000c0106394                Filesystem::Filesystem(BlockDevice&)
+                0x00000000c01063d0                Filesystem::name() const
+                0x00000000c01063e4                Filesystem::probe(BlockDevice&)
+                0x00000000c01063f8                Filesystem::get_inode(unsigned int)
+                0x00000000c0106436                Filesystem::get_inode_rawptr(unsigned int)
+                0x00000000c010644a                Filesystem::root_inode()
+                0x00000000c0106460                Filesystem::device()
+ *fill*         0x00000000c0106475        0x1 
+ .text._ZN11BlockDeviceaSERKS_
+                0x00000000c0106476       0x12 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+                0x00000000c0106476                BlockDevice::operator=(BlockDevice const&)
+ .text          0x00000000c0106488      0x2b7 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+                0x00000000c0106488                LinkedInode::LinkedInode(DC::shared_ptr<Inode>, DC::string, DC::shared_ptr<LinkedInode>)
+                0x00000000c0106488                LinkedInode::LinkedInode(DC::shared_ptr<Inode>, DC::string, DC::shared_ptr<LinkedInode>)
+                0x00000000c01064dc                LinkedInode::~LinkedInode()
+                0x00000000c01064dc                LinkedInode::~LinkedInode()
+                0x00000000c0106528                LinkedInode::inode()
+                0x00000000c0106552                LinkedInode::name()
+                0x00000000c0106584                LinkedInode::parent()
+                0x00000000c01065b0                LinkedInode::get_full_path()
+ *fill*         0x00000000c010673f        0x1 
+ .text._ZN2DC10shared_ptrI5InodeEC2ERKS2_
+                0x00000000c0106740       0x40 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+                0x00000000c0106740                DC::shared_ptr<Inode>::shared_ptr(DC::shared_ptr<Inode> const&)
+                0x00000000c0106740                DC::shared_ptr<Inode>::shared_ptr(DC::shared_ptr<Inode> const&)
+ .text._ZNK2DC10shared_ptrI11LinkedInodeE3getEv
+                0x00000000c0106780       0x14 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+                0x00000000c0106780                DC::shared_ptr<LinkedInode>::get() const
+ .text.__x86.get_pc_thunk.si
+                0x00000000c0106794        0x4 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+                0x00000000c0106794                __x86.get_pc_thunk.si
+ .text          0x00000000c0106798      0xca6 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+                0x00000000c010696a                kmalloc
+                0x00000000c0107017                kfree
+                0x00000000c0107293                kcalloc
+                0x00000000c01072d8                krealloc
+ .text          0x00000000c010743e      0x8be CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c010743e                VFS::VFS()
+                0x00000000c010743e                VFS::VFS()
+                0x00000000c01074aa                VFS::~VFS()
+                0x00000000c01074aa                VFS::~VFS()
+                0x00000000c01074de                VFS::inst()
+                0x00000000c01074f4                VFS::mount_root(Filesystem*)
+                0x00000000c01076d6                VFS::resolve_path(DC::string, DC::shared_ptr<LinkedInode>)
+                0x00000000c0107c2c                VFS::root_ref()
+                0x00000000c0107c50                VFS::Mount::Mount(Filesystem*, LinkedInode*)
+                0x00000000c0107c50                VFS::Mount::Mount(Filesystem*, LinkedInode*)
+                0x00000000c0107c72                VFS::Mount::Mount()
+                0x00000000c0107c72                VFS::Mount::Mount()
+                0x00000000c0107c96                VFS::Mount::host_inode()
+                0x00000000c0107ce8                VFS::Mount::fs()
+ .text._ZN2DC10shared_ptrI5InodeEC2Ev
+                0x00000000c0107cfc       0x2e CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107cfc                DC::shared_ptr<Inode>::shared_ptr()
+                0x00000000c0107cfc                DC::shared_ptr<Inode>::shared_ptr()
+ .text._ZN2DC10shared_ptrI11LinkedInodeEC2Ev
+                0x00000000c0107d2a       0x2e CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107d2a                DC::shared_ptr<LinkedInode>::shared_ptr()
+                0x00000000c0107d2a                DC::shared_ptr<LinkedInode>::shared_ptr()
+ .text._ZNK2DC10shared_ptrI5InodeEcvbEv
+                0x00000000c0107d58       0x29 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107d58                DC::shared_ptr<Inode>::operator bool() const
+ .text._ZN2DC4moveINS_10shared_ptrI5InodeEEEERT_S5_
+                0x00000000c0107d81       0x12 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107d81                DC::shared_ptr<Inode>& DC::move<DC::shared_ptr<Inode> >(DC::shared_ptr<Inode>&)
+ *fill*         0x00000000c0107d93        0x1 
+ .text._ZN2DC10shared_ptrI5InodeEaSES2_
+                0x00000000c0107d94       0x26 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107d94                DC::shared_ptr<Inode>::operator=(DC::shared_ptr<Inode>)
+ .text._ZNK2DC10shared_ptrI11LinkedInodeEdeEv
+                0x00000000c0107dba       0x14 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107dba                DC::shared_ptr<LinkedInode>::operator*() const
+ .text._ZN2DC10shared_ptrI5InodeE4swapERS2_
+                0x00000000c0107dce       0x3f CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107dce                DC::shared_ptr<Inode>::swap(DC::shared_ptr<Inode>&)
+ .text._ZN2DC4swapIP5InodeEEvRT_S4_
+                0x00000000c0107e0d       0x51 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107e0d                void DC::swap<Inode*>(Inode*&, Inode*&)
+ .text._ZN2DC4moveIRP5InodeEEONS_16remove_referenceIT_E4typeEOS5_
+                0x00000000c0107e5e       0x12 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107e5e                DC::remove_reference<Inode*&>::type&& DC::move<Inode*&>(Inode*&)
+ .text.__x86.get_pc_thunk.di
+                0x00000000c0107e70        0x4 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c0107e70                __x86.get_pc_thunk.di
+ .text          0x00000000c0107e74        0x0 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .text          0x00000000c0107e74      0x292 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+                0x00000000c0107e74                strcat(char*, char const*)
+                0x00000000c0107eeb                strcmp(char const*, char const*)
+                0x00000000c0107f7e                memset(void*, char, int)
+                0x00000000c0107fba                memcpy(void*, void const*, unsigned int)
+                0x00000000c0107ffe                strlen(char const*)
+                0x00000000c010802c                substr(int, char*, char*)
+                0x00000000c0108059                substri(int, char*, char*)
+                0x00000000c010808c                substrr(int, int, char*, char*)
+                0x00000000c01080c9                strcpy(char*, char const*)
+ .text          0x00000000c0108106      0x2bf CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+                0x00000000c0108106                atoi(char*)
+                0x00000000c0108172                sgn(int)
+                0x00000000c0108193                abs(float)
+                0x00000000c01081ab                nibble_to_hex_string(unsigned char)
+                0x00000000c01081e3                itoa(int, char*, int)
+ *fill*         0x00000000c01083c5        0x1 
+ .text          0x00000000c01083c6      0x65d CMakeFiles/yuku32.dir/__/common/string.cpp.o
+                0x00000000c01083c6                DC::string::string()
+                0x00000000c01083c6                DC::string::string()
+                0x00000000c0108410                DC::string::string(DC::string const&)
+                0x00000000c0108410                DC::string::string(DC::string const&)
+                0x00000000c0108470                DC::string::string(char const*)
+                0x00000000c0108470                DC::string::string(char const*)
+                0x00000000c01084da                DC::string::~string()
+                0x00000000c01084da                DC::string::~string()
+                0x00000000c010851a                DC::string::operator=(DC::string const&)
+                0x00000000c01085a0                DC::string::operator+=(DC::string const&)
+                0x00000000c0108640                DC::string::operator+(DC::string const&) const
+                0x00000000c01086cc                DC::string::operator=(char const*)
+                0x00000000c0108754                DC::string::operator==(DC::string const&) const
+                0x00000000c0108786                DC::string::operator==(char const*) const
+                0x00000000c01087b4                DC::string::operator!=(DC::string const&) const
+                0x00000000c01087e8                DC::string::operator!=(char const*) const
+                0x00000000c0108818                DC::string::operator[](unsigned int) const
+                0x00000000c0108836                DC::string::length() const
+                0x00000000c010884c                DC::string::substr(unsigned int, unsigned int) const
+                0x00000000c01088cc                DC::string::find(DC::string const&, unsigned int) const
+                0x00000000c01088f6                DC::string::find(char const*, unsigned int) const
+                0x00000000c01089a6                DC::string::find(char, unsigned int) const
+                0x00000000c01089f8                DC::string::c_str() const
+                0x00000000c0108a0e                DC::string::data() const
+
+.rodata         0x00000000c0108a24      0xd39 load address 0x0000000000108a24
+ .rodata        0x00000000c0108a24      0x229 CMakeFiles/yuku32.dir/kmain.cpp.o
+ *fill*         0x00000000c0108c4d        0x3 
+ .rodata        0x00000000c0108c50      0x40b CMakeFiles/yuku32.dir/shell.cpp.o
+ *fill*         0x00000000c010905b        0x1 
+ .rodata        0x00000000c010905c       0xf9 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ *fill*         0x00000000c0109155        0x3 
+ .rodata        0x00000000c0109158       0xd5 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ *fill*         0x00000000c010922d        0x3 
+ .rodata        0x00000000c0109230      0x38e CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ *fill*         0x00000000c01095be        0x2 
+ .rodata        0x00000000c01095c0      0x148 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .rodata        0x00000000c0109708       0x12 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ *fill*         0x00000000c010971a        0x2 
+ .rodata        0x00000000c010971c       0x36 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .rodata        0x00000000c0109752        0x3 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .rodata        0x00000000c0109755        0x8 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+
+.eh_frame       0x00000000c0109760     0x2684 load address 0x0000000000109760
+ .eh_frame      0x00000000c0109760      0x188 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .eh_frame      0x00000000c01098e8       0x80 CMakeFiles/yuku32.dir/pit.cpp.o
+                                         0xc0 (size before relaxing)
+ .eh_frame      0x00000000c0109968      0x398 CMakeFiles/yuku32.dir/shell.cpp.o
+                                        0x440 (size before relaxing)
+ .eh_frame      0x00000000c0109d00      0x2b4 CMakeFiles/yuku32.dir/kstdio.cpp.o
+                                        0x31c (size before relaxing)
+ .eh_frame      0x00000000c0109fb4       0x44 CMakeFiles/yuku32.dir/keyboard.cpp.o
+                                         0x84 (size before relaxing)
+ .eh_frame      0x00000000c0109ff8      0x260 CMakeFiles/yuku32.dir/kstddef.cpp.o
+                                        0x2a0 (size before relaxing)
+ .eh_frame      0x00000000c010a258       0x8c CMakeFiles/yuku32.dir/device/ata.cpp.o
+                                         0xcc (size before relaxing)
+ .eh_frame      0x00000000c010a2e4      0x1d8 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+                                        0x22c (size before relaxing)
+ .eh_frame      0x00000000c010a4bc      0x1fc CMakeFiles/yuku32.dir/pci/pci.cpp.o
+                                        0x23c (size before relaxing)
+ .eh_frame      0x00000000c010a6b8       0x48 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+                                         0x88 (size before relaxing)
+ .eh_frame      0x00000000c010a700      0x3ec CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                                        0x42c (size before relaxing)
+ .eh_frame      0x00000000c010aaec       0x48 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+                                         0x88 (size before relaxing)
+ .eh_frame      0x00000000c010ab34       0xac CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+                                         0xec (size before relaxing)
+ .eh_frame      0x00000000c010abe0       0x98 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+                                         0xc4 (size before relaxing)
+ .eh_frame      0x00000000c010ac78       0x24 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+                                         0x50 (size before relaxing)
+ .eh_frame      0x00000000c010ac9c      0x2b4 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+                                        0x2f4 (size before relaxing)
+ .eh_frame      0x00000000c010af50       0xcc CMakeFiles/yuku32.dir/device/ide.cpp.o
+                                        0x120 (size before relaxing)
+ .eh_frame      0x00000000c010b01c       0x20 CMakeFiles/yuku32.dir/device/Device.cpp.o
+                                         0x4c (size before relaxing)
+ .eh_frame      0x00000000c010b03c      0x114 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+                                        0x154 (size before relaxing)
+ .eh_frame      0x00000000c010b150       0x88 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+                                         0xc8 (size before relaxing)
+ .eh_frame      0x00000000c010b1d8      0x12c CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                                        0x18c (size before relaxing)
+ .eh_frame      0x00000000c010b304       0x8c CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+                                         0xcc (size before relaxing)
+ .eh_frame      0x00000000c010b390      0x100 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+                                        0x1b0 (size before relaxing)
+ .eh_frame      0x00000000c010b490      0x124 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+                                        0x2f8 (size before relaxing)
+ .eh_frame      0x00000000c010b5b4      0x114 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+                                        0x154 (size before relaxing)
+ .eh_frame      0x00000000c010b6c8      0x2a0 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                                        0x634 (size before relaxing)
+ .eh_frame      0x00000000c010b968      0x120 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+                                        0x14c (size before relaxing)
+ .eh_frame      0x00000000c010ba88       0xa4 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+                                         0xd0 (size before relaxing)
+ .eh_frame      0x00000000c010bb2c      0x2b8 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+                                        0x2f8 (size before relaxing)
+
+.iplt           0x00000000c010bde4        0x0 load address 0x000000000010bde4
+ .iplt          0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+
+.rel.dyn        0x00000000c010bde4        0x0 load address 0x000000000010bde4
+ .rel.got       0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.iplt      0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text      0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN5ShellD2Ev
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeED2Ev
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeE7releaseEv
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC16shared_ptr_count4swapERS0_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC4swapIPlEEvRT_S3_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeEC2EPS1_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeEC2ERKS2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZNK2DC10shared_ptrI11LinkedInodeEcvbEv
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeED2Ev
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeEaSES2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeE7acquireEPS1_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeE7releaseEv
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeE4swapERS2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC4swapIP11LinkedInodeEEvRT_S4_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN12MemoryBitmapILi1048576EE14allocate_pagesEjj
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN12MemoryBitmapILi1048576EE10find_pagesEjj
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeEC2EPS1_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeE7acquireEPS1_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeEC2ERKS2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeEC2Ev
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI11LinkedInodeEC2Ev
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZNK2DC10shared_ptrI5InodeEcvbEv
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeEaSES2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC10shared_ptrI5InodeE4swapERS2_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .rel.text._ZN2DC4swapIP5InodeEEvRT_S4_
+                0x00000000c010bde4        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+
+.data           0x00000000c010c000     0x1204 load address 0x000000000010c000
+ *(.data*)
+ .data          0x00000000c010c000     0x104e CMakeFiles/yuku32.dir/asm/startup.s.o
+                0x00000000c010c000                BootPageDirectory
+ .data          0x00000000c010d04e        0x0 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .data          0x00000000c010d04e        0x0 CMakeFiles/yuku32.dir/pit.cpp.o
+ .data          0x00000000c010d04e        0x0 CMakeFiles/yuku32.dir/shell.cpp.o
+ *fill*         0x00000000c010d04e        0x2 
+ .data          0x00000000c010d050        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+                0x00000000c010d050                ccolor
+                0x00000000c010d054                vidmem
+ *fill*         0x00000000c010d058        0x8 
+ .data          0x00000000c010d060      0x100 CMakeFiles/yuku32.dir/keyboard.cpp.o
+                0x00000000c010d060                kbdus
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .data          0x00000000c010d160        0x0 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .data.rel.ro._ZTV9Ext2Inode
+                0x00000000c010d160       0x1c CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+                0x00000000c010d160                vtable for Ext2Inode
+ .data.rel.ro._ZTV14Ext2Filesystem
+                0x00000000c010d17c       0x14 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+                0x00000000c010d17c                vtable for Ext2Filesystem
+ .data          0x00000000c010d190        0x0 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .data          0x00000000c010d190        0x0 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .data          0x00000000c010d190        0x0 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .data.rel.ro.local._ZTV11BlockDevice
+                0x00000000c010d190       0x14 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+                0x00000000c010d190                vtable for BlockDevice
+ .data          0x00000000c010d1a4        0x0 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .data.rel.ro.local._ZTV9PIODevice
+                0x00000000c010d1a4       0x14 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+                0x00000000c010d1a4                vtable for PIODevice
+ .data          0x00000000c010d1b8        0x0 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .data.rel.ro.local._ZTV5Inode
+                0x00000000c010d1b8       0x1c CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+                0x00000000c010d1b8                vtable for Inode
+ .data          0x00000000c010d1d4        0x0 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .data.rel.ro.local._ZTV15PartitionDevice
+                0x00000000c010d1d4       0x14 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+                0x00000000c010d1d4                vtable for PartitionDevice
+ .data          0x00000000c010d1e8        0x0 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .data.rel.ro.local._ZTV10Filesystem
+                0x00000000c010d1e8       0x14 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+                0x00000000c010d1e8                vtable for Filesystem
+ .data          0x00000000c010d1fc        0x0 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .data          0x00000000c010d1fc        0x8 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .data          0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .data          0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .data          0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .data          0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .data          0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+
+.got            0x00000000c010d204        0x0 load address 0x000000000010d204
+ .got           0x00000000c010d204        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+
+.got.plt        0x00000000c010d204        0xc load address 0x000000000010d204
+ .got.plt       0x00000000c010d204        0xc CMakeFiles/yuku32.dir/asm/startup.s.o
+                0x00000000c010d204                _GLOBAL_OFFSET_TABLE_
+
+.igot.plt       0x00000000c010d210        0x0 load address 0x000000000010d210
+ .igot.plt      0x00000000c010d210        0x0 CMakeFiles/yuku32.dir/asm/startup.s.o
+
+.bss            0x00000000c010e000    0x4b0d4 load address 0x000000000010e000
+ *(COMMON)
+ *(.bss*)
+ .bss           0x00000000c010e000     0x4000 CMakeFiles/yuku32.dir/asm/startup.s.o
+ .bss           0x00000000c0112000        0x4 CMakeFiles/yuku32.dir/kmain.cpp.o
+                0x00000000c0112000                i
+ .bss           0x00000000c0112004        0x0 CMakeFiles/yuku32.dir/pit.cpp.o
+ .bss           0x00000000c0112004        0x0 CMakeFiles/yuku32.dir/shell.cpp.o
+ .bss           0x00000000c0112004        0x8 CMakeFiles/yuku32.dir/kstdio.cpp.o
+                0x00000000c0112004                xpos
+                0x00000000c0112008                ypos
+ *fill*         0x00000000c011200c       0x14 
+ .bss           0x00000000c0112020      0x124 CMakeFiles/yuku32.dir/keyboard.cpp.o
+                0x00000000c0112020                shift
+                0x00000000c0112040                kbdbuf
+                0x00000000c0112140                input_mode
+                0x00000000c0112141                input_done
+                0x00000000c0112142                input_i
+                0x00000000c0112143                shell_mode
+ .bss           0x00000000c0112144        0x0 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ *fill*         0x00000000c0112144       0x1c 
+ .bss           0x00000000c0112160      0x420 CMakeFiles/yuku32.dir/device/ata.cpp.o
+                0x00000000c0112160                boot_disk
+                0x00000000c0112180                ata_buf
+                0x00000000c0112380                ata_buf2
+ .bss           0x00000000c0112580        0x0 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .bss           0x00000000c0112580        0xd CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+                0x00000000c0112580                current_proc
+                0x00000000c0112584                kernel_proc
+                0x00000000c0112588                __cpid__
+                0x00000000c011258c                tasking_enabled
+ .bss           0x00000000c011258d        0x0 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .bss           0x00000000c011258d        0x0 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ *fill*         0x00000000c011258d       0x13 
+ .bss           0x00000000c01125a0       0x2e CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+                0x00000000c01125a0                gdt
+                0x00000000c01125c8                gp
+ *fill*         0x00000000c01125ce      0xa32 
+ .bss           0x00000000c0113000    0x45824 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+                0x00000000c0113000                kernel_page_directory
+                0x00000000c0114000                kernel_early_page_table
+                0x00000000c0115000                page_tables_table
+                0x00000000c0116000                page_tables
+                0x00000000c0117000                page_tables_physaddr
+                0x00000000c0118000                page_tables_num_mapped
+                0x00000000c0118800                pmem_bitmap
+                0x00000000c0138820                vmem_bitmap
+ *fill*         0x00000000c0158824       0x1c 
+ .bss           0x00000000c0158840      0x806 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+                0x00000000c0158840                idt
+                0x00000000c0159040                idtp
+ *fill*         0x00000000c0159046       0x1a 
+ .bss           0x00000000c0159060       0x40 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+                0x00000000c0159060                irq_routines
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .bss           0x00000000c01590a0        0x0 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .bss           0x00000000c01590a0       0x30 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .bss           0x00000000c01590d0        0x4 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+                0x00000000c01590d0                VFS::instance
+ .bss           0x00000000c01590d4        0x0 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .bss           0x00000000c01590d4        0x0 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .bss           0x00000000c01590d4        0x0 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .bss           0x00000000c01590d4        0x0 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+                0x00000000c01590d4                PROVIDE (_KERNEL_END = .)
+OUTPUT(yuku32 elf32-i386)
+
+.comment        0x0000000000000000       0x12
+ .comment       0x0000000000000000       0x12 CMakeFiles/yuku32.dir/kmain.cpp.o
+                                         0x13 (size before relaxing)
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/pit.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/shell.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .comment       0x0000000000000012       0x13 CMakeFiles/yuku32.dir/__/common/string.cpp.o
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/kmain.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/pit.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/shell.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/kstdio.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/keyboard.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/kstddef.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/ata.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/tasking/elf.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/tasking/tasking.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/tasking/tss.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/pci/pci.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/memory/gdt.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/memory/paging.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/interrupt/idt.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/interrupt/irq.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/interrupt/isr.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/interrupt/syscall.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/Ext2.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/ide.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/Device.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/BlockDevice.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/PIODevice.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/Inode.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/device/PartitionDevice.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/FileSystem.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/LinkedInode.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/memory/kliballoc.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/VFS.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/filesystem/File.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/__/common/cstring.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/__/common/stdlib.cpp.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CMakeFiles/yuku32.dir/__/common/string.cpp.o

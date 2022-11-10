@@ -38,132 +38,6 @@ uint32_t inl(uint16_t port)
    return ret;
 }
 
-int sgn(int x)
-{
-	if (x>0) {
-		return 1;
-	} else {
-		return -1;
-	}
-
-	return 0;
-}
-
-int abs(float x)
-{
-	return (int)x;
-}
-
-void *memset(void *dest, char val, int count)
-{
-	char *temp = (char *)dest;
-	for( ; count != 0; count--) *temp++ = val;
-	return dest;
-}
-
-void *memcpy(void *dest, const void *src, size_t count)
-{
-	const char *sp = (const char *)src;
-	char *dp = (char *)dest;
-	for(; count != 0; count--) *dp++ = *sp++;
-	return dest;
-}
-
-void num_to_hex_string(uint8_t num, char *str)
-{
-	str[1] = nibble_to_hex_string(num);
-	str[0] = nibble_to_hex_string(num >> 4);
-}
-
-char nibble_to_hex_string(uint8_t num)
-{
-	uint8_t tmp = num & 0xF;
-
-	if (tmp < 0xA) {
-		return tmp+0x30;
-	} else {
-		return tmp+0x57;
-	}
-}
-
-char *itoa(int i, char *p, int base)
-{
-	char const digit[] = "0123456789";
-	int nbcount = 0;
-	bool flag = 0;
-	int ind;
-
-	switch(base) {
-		case 10: {
-			if (i < 0) {
-				*p++ = '-';
-				i *= -1;
-			}
-			int shifter = i;
-			do {
-				++p;
-				shifter = shifter / 10;
-			} while (shifter);
-			*p = '\0';
-			do {
-				*--p = digit[i % 10];
-				i = i / 10;
-			} while (i);
-		}
-		break;
-		//I figured out how to roll base 2 and 16 into one thing... Not sure how efficient it is though
-		case 2:
-		case 16:
-			if (i == 0) {
-				p[0] = '0'; p[1] = '\0';
-			} else {
-				uint8_t shift = base == 16 ? 4 : 1;
-				
-				for (uint32_t a = (base == 16 ? 0xF0000000 : 0x80000000); a > 0; a = a >> shift)
-					if ((i&a) != 0 || flag){ nbcount++; flag = true;}
-				
-				ind = nbcount;
-				
-				for (ind > 0; ind--;)
-					p[-ind+nbcount-1] = base == 16 ? (nibble_to_hex_string((i >> (ind*4)) & 0xF)) : (((i >> ind) & 0x1) ? '1' : '0');
-				
-				p[nbcount] = '\0';
-			}
-		break;
-	}
-	return p;
-}
-
-bool is_a_character(uint8_t num)
-{
-	return num >= 0x20 && num <= 0x7E;
-}
-
-int strlen(const char *str)
-{
-		const char *s;
-
-		for (s = str; *s; ++s);
-		return (s - str);
-}
-
-bool strcmp(string str1,string str2)
-{
-	int i = 0;
-	bool flag = false;
-
-	while (str1[i] != '\0' && str2[i] != '\0') {
-		if (str1[i] != str2[i]) {
-			flag=1;
-			break;
-		}
-		i++;
-	}
-
-	return flag == 0 && str1[i] == '\0' && str2[i] == '\0';
-
-}
-
 int index_of(char c, char *str)
 {
 	int i = 0;
@@ -193,33 +67,6 @@ int index_of_n(char c, int n, char *str)
 	}
 
 	return strlen(str);
-}
-
-// substring exclusive
-void substr(int i, char *src, char *dest)
-{
-	memcpy(dest,src,i);
-	dest[i] = '\0';
-}
-
-// substring inclusive
-void substri(int i, char *src, char *dest)
-{
-	memcpy(dest,src,i+1);
-	dest[i+1] = '\0';
-}
-
-// substring exclusive range (end is exclusive, beginning is inclusive)
-void substrr(int s, int e, char *src, char *dest)
-{
-	memcpy(dest,&src[s],e-s);
-	dest[e-s] = '\0';
-}
-
-void strcpy(char *src, char *dest)
-{
-	memcpy(dest, src, strlen(src));
-	dest[strlen(src)] = '\0';
 }
 
 // returns number of instances of c in str
@@ -260,18 +107,6 @@ bool contains(char *str, char *cont)
 	return flaga;
 }
 
-int str_to_int(char *str)
-{
-	int len = strlen(str);
-	int ret = 0;
-
-	for (int i = 0; i < len; i++) {
-		ret = ret * 10 + (str[i] - '0');
-	}
-
-	return ret;
-}
-
 void cli()
 {
 	asm volatile("cli");
@@ -288,18 +123,6 @@ void to_upper(char *str)
 		if (*str >= 'a' && *str <= 'z') *str = *str - ('a' - 'A');
 		*str++;
 	}
-}
-
-char *strcat(char *dest, const char *src)
-{
-	uint32_t i,j;
-
-	for (i = 0; dest[i] != '\0'; i++);
-	for (j = 0; src[j] != '\0'; j++)
-		dest[i+j] = src[j];
-	
-	dest[i+j] = '\0';
-	return dest;
 }
 
 void *operator new(size_t size)

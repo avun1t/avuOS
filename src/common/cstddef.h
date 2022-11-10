@@ -15,18 +15,17 @@
 	(((ap) = (ap) + __va_argsiz(t)),	\
 	*((t*)(void*)((ap) - __va_argsiz(t))))
 
-char *va_list;
-typedef unsigned signed long long int uint64_t;
-typedef signed long long int int64_t;
-typedef unsigned signed int uint32_t;
-typedef signed int int32_t;
-typedef unsigned signed short uint16_t;
-typedef signed short int16_t;
-typedef unsigned signed char uint8_t;
-typedef signed char int8_t;
-typedef char *string;
-typedef int int32_t;
-typedef uint32_t size_t;
-typedef unsigned int uint;
+typedef char *va_list;
+typedef unsigned long long int 	uint64_t;
+typedef signed long long int 	int64_t;
+typedef unsigned int 			uint32_t;
+typedef signed int 				int32_t;
+typedef unsigned short 			uint16_t;
+typedef signed short 			int16_t;
+typedef unsigned char 			uint8_t;
+typedef signed char 			int8_t;
+typedef int 					int32_t;
+typedef uint32_t 				size_t;
+typedef unsigned int 			uint;
 
 #endif // __AVUOS_CSTDDEF_H_

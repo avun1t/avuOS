@@ -117,7 +117,7 @@ public:
 
 	Raw raw;
 
-	Ext2Inode(Ext2filesystem &filesystem, InodeID id);
+	Ext2Inode(Ext2Filesystem &filesystem, InodeID id);
 	uint32_t get_block_group();
 	uint32_t get_index();
 	uint32_t get_block();
@@ -126,7 +126,7 @@ public:
 
 	void read_raw();
 	bool read(uint32_t start, uint32_t length, uint8_t *buf) override;
-	Inode *find_rawptr(string name) override;
+	Inode *find_rawptr(DC::string name) override;
 	Ext2Filesystem &ext2fs();
 };
 
