@@ -6,6 +6,7 @@
 int xpos = 0;
 int ypos = 0;
 char ccolor = 0x0f;
+uint8_t *vidmem = (uint8_t *)0xB8000 + HIGHER_HALF;
 
 // Specific mode print_util should implement:
 // putch_color(char c, char color);
@@ -228,7 +229,6 @@ void PANIC(char *error, char *msg, bool hang)
 	while(hang);
 }
 
-uint8_t* vidmem = (uint8_t*)0xB8000; // it would be 0xb8000, but we mapped the kernel to 0xc0000000.
 void putch_color(char c, char color)
 {
 	if (c == '\r') {
@@ -314,4 +314,9 @@ void scroll()
 	}
 
 	ypos--;
+}
+
+void set_vidmem(uint8_t *memloc)
+{
+	vidmem = memloc;
 }

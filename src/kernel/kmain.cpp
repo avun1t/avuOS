@@ -24,6 +24,10 @@ int i;
 
 int kmain(uint32_t mbootptr)
 {
+	clear_screen();
+	printf("init: Starting AvuOS...\n");
+	parse_mboot(mbootptr + HIGHER_HALF);
+
 	load_gdt();
 	interrupts_init();
 	setup_paging();
@@ -87,14 +91,14 @@ void kmain_late()
 
 void parse_mboot(uint32_t addr)
 {
-	struct multiboot_tag *tag;
-
-	for (tag = (struct multiboot_tag *)(addr + 8); tag->type != MULTIBOOT_TAG_TYPE_END; tag = (struct multiboot_tag *)((multiboot_uint8_t *)tag + ((tag->size + 7) & ~7))) {
-		switch (tag->type) {
-			case MULTIBOOT_TAG_TYPE_BOOTDEV:
-				boot_disk = (uint8_t)(((struct multiboot_tag_bootdev *)tag)->biosdev & 0xFF);
-				break;
-		}
+	struct multiboot_info *header = (multiboot_info*)addr;
+	
+	if (header->flags & MULTIBOOT_INFO_BOOTDEV) {
+		boot_disk = (header->boot_device & 0xF0000000u) >> 28u;
+		printf("init: BIOS boot disk: 0x%x\n", boot_disk);
+	} else {
+		printf("init: No multiboot boot device info. Cannot boot.\n");
+		while(1);
 	}
 }
 
