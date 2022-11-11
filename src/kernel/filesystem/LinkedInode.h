@@ -5,6 +5,7 @@
 #include <common/unique_ptr.hpp>
 #include <common/string.h>
 
+class Inode;
 class LinkedInode {
 public:
 	LinkedInode(DC::shared_ptr<Inode> inode, DC::string name, DC::shared_ptr<LinkedInode> parent);

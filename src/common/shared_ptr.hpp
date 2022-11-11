@@ -259,6 +259,12 @@ namespace DC {
 			return shared_ptr<T>();
 		}
 	}
+
+	template<typename T, class... Args>
+	shared_ptr<T> make_shared(Args&& ... args)
+	{
+		return shared_ptr<T>(new T(args...));
+	}
 }
 
 #endif // __AVUOS_SHARED_PTR_HPP_

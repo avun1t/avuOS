@@ -14,6 +14,7 @@ public:
     bool write_blocks(uint32_t block, uint32_t count, uint8_t *buffer);
 
     size_t block_size();
+	size_t read(FileDescriptor &fd, size_t offset, uint8_t *buffer, size_t count) override;
 };
 
 #endif // __PIODEVICE_H_
