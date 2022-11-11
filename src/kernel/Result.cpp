@@ -15,3 +15,8 @@ bool Result::is_error() const
 {
 	return _code != 0;
 }
+
+int Result::code() const
+{
+	return _code;
+}

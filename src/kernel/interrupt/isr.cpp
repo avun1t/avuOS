@@ -75,7 +75,7 @@ void fault_handler(struct registers *r)
 			if (get_current_process() == nullptr || get_current_process()->pid == 1) {
 				page_fault_handler(r);
 			} else {
-				notify(SIGILL);
+				notify(SIGSEGV);
 			}
 			break;
 

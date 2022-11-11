@@ -25,7 +25,7 @@ int i;
 int kmain(uint32_t mbootptr)
 {
 	clear_screen();
-	printf("init: Starting AvuOS...\n");
+	printf("init: Starting avuOS...\n");
 	parse_mboot(mbootptr + HIGHER_HALF);
 
 	load_gdt();
@@ -59,7 +59,7 @@ void kmain_late()
 	auto part = DC::make_shared<PartitionDevice>(disk, pio_get_first_partition(boot_disk));
 	auto part_descriptor = DC::make_shared<FileDescriptor>(part);
 	if (Ext2Filesystem::probe(*part_descriptor.get())) {
-		printf("init: Partition is ext2");
+		printf("init: Partition is ext2 ");
 	} else {
 		println("init: Partition is not ext2! Hanging.");
 		while (true);

@@ -15,8 +15,8 @@ void pio_prepare_disk(int disk, int address)
     outb(0x1F1, 0x00);
     outb(0x1F2, 0x01);
     outb(0x1F3, (uint8_t)address);
-    outb(0x1F4, ((uint8_t)address >> 8));
-    outb(0x1F5, ((uint8_t)address >> 16));
+    outb(0x1F4, (uint8_t)(address >> 8));
+    outb(0x1F5, (uint8_t)(address >> 16));
     outb(0x1F6, 0xE0 | (disk << 4) | ((address >> 24) & 0x0F));
     outb(0x1F7, 0x20);
     while (!(inb(0x1F7) & 0x08)) {}
