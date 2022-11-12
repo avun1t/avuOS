@@ -4,10 +4,14 @@
 #include <kernel/kstddef.h>
 #include <common/string.h>
 
+#ifdef DEBUG
 #define ASSERT(cond) \
 	if(!(cond)) { 			\
 		PANIC("Assertion failed: ", __FILE__ " at line " STR(__LINE__), true); \
 	}
+#else
+#define ASSERT(cond)
+#endif
 
 #define SCREEN_CHAR_WIDTH 80
 #define SCREEN_CHAR_HEIGHT 25
