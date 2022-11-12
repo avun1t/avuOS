@@ -2,13 +2,16 @@
 ### The stupid Operating System
 
 ### What's working
-- Booting via grub off of a hard drive
-- Typing commands into the terminal shell
-- Basic multitasking
+- Booting via grub multiboot off of a hard drive
+- Typing commands into the kernel shell
+- Reading files off of the hard drive
+- Reading devices as files(`/dev/hda`, `/dev/zero`, `/dev/random`, etc.)
+- Basic multitasking (no executables yet)
 
 ### Known Issues / Limitations
 - It kinda sucks
-- Executables can only be in a raw format as of now, meaning no ELF files
 - Only works with ext2 filesystems with a block size of 1024
-- Uses BIOS interrupts to read/write to disk instead of AHCI/IDE
-- Some C++ features like global initializers
+- Uses BIOS interrupts (ATA PIO) to read/write to disk instead of AHCI/IDE (very slow)
+
+### Building / Running
+- See [INSTRUCTIONS.md](BUILDING.md) for instructions.

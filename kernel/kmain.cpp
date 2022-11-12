@@ -118,7 +118,7 @@ void interrupts_init()
 {
 	register_idt();
 	isr_init();
-	idt_set_gate(0x80, (unsigned)syscall_handler, 0x08, 0x8E);
+	idt_set_gate(0x80, (unsigned)asm_syscall_handler, 0x08, 0x8E);
 	idt_set_gate(0x81, (unsigned)preempt, 0x08, 0x8E); // for preempting without PIT
 	pit_init(200);
 	irq_init();
