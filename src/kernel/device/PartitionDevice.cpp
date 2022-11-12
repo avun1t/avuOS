@@ -1,6 +1,6 @@
 #include "PartitionDevice.h"
 
-PartitionDevice::PartitionDevice(const DC::shared_ptr<BlockDevice> &parent, uint32_t offset_blocks) : _parent(parent), _offset(offset_blocks * parent->block_size())
+PartitionDevice::PartitionDevice(unsigned major, unsigned minor, const DC::shared_ptr<BlockDevice> &parent, uint32_t offset_blocks) : BlockDevice(major, minor), _parent(parent), _offset(offset_blocks * parent->block_size())
 {}
 
 bool PartitionDevice::read_blocks(uint32_t block, uint32_t count, uint8_t *buffer)

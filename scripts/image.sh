@@ -40,6 +40,17 @@ sudo grub-install --boot-directory=/mnt/boot --target=i386-pc --modules="ext2 pa
 sudo cp scripts/grub.cfg /mnt/boot/grub || (echo "Couldn't copy grub.cfg." && exit 1)
 echo "Installed grub!"
 
+echo "Setting up root filesystem..."
+echo "Setting up devices..."
+sudo mkdir -p /mnt/dev
+sudo mknod /mnt/dev/tty0 c 4 0
+sudo mknod /mnt/dev/hda b 3 0
+sudo mknod /mnt/dev/random c 1 8
+sudo mknod /mnt/dev/null c 1 3
+sudo mknod /mnt/dev/zero c 1 5
+echo "Done setting up devices!"
+echo "Done setting up root filesystem!"
+
 echo "Unmounting and cleaning up..."
 (sudo umount /mnt && sync)|| (echo "Couldn't unmount." && exit 1)
 sudo losetup -d "${dev}" || (echo "Couldn't delete loopback device." && exit 1)

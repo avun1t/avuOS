@@ -6,7 +6,7 @@
 
 class PIODevice : public BlockDevice {
 public:
-    PIODevice(uint8_t id);
+    PIODevice(unsigned major, unsigned minor, uint8_t id);
 
     uint8_t disk_id;
 

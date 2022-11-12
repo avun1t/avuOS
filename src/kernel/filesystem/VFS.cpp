@@ -115,6 +115,14 @@ ResultRet<DC::shared_ptr<FileDescriptor>> VFS::open(DC::string path, int options
 
 	if ((options & O_DIRECTORY) && !meta.is_directory()) return -ENOTDIR;
 
+	if (meta.is_device()) {
+		Device *dev = Device::get_device(meta.dev_major, meta.dev_minor);
+		if (dev == nullptr) return -ENODEV;
+		auto ret = DC::make_shared<FileDescriptor>(dev);
+		ret->set_options(options);
+		return ret;
+	}
+
 	auto file = DC::make_shared<InodeFile>(inode->inode());
 	auto ret = DC::make_shared<FileDescriptor>(file);
 	ret->set_options(options);

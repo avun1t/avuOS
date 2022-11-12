@@ -2,7 +2,7 @@
 #include <common/defines.h>
 #include "BlockDevice.h"
 
-BlockDevice::BlockDevice()
+BlockDevice::BlockDevice(unsigned major, unsigned minor) : Device(major, minor)
 {}
 
 bool BlockDevice::read_block(uint32_t block, uint8_t *buffer)
@@ -28,4 +28,9 @@ bool BlockDevice::write_blocks(uint32_t block, uint32_t count, uint8_t *buffer)
 size_t BlockDevice::block_size()
 {
 	return 0;
+}
+
+bool BlockDevice::is_block_device()
+{
+	return true;
 }

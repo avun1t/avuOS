@@ -3,12 +3,16 @@
 #include "DirectoryEntry.h"
 #include <common/defines.h>
 #include <kernel/kstdio.h>
+#include <kernel/device/Device.h>
 
-FileDescriptor::FileDescriptor(DC::shared_ptr<File> file) : _file(file)
+FileDescriptor::FileDescriptor(DC::shared_ptr<File> file) : _file(file.get()), _fileptr(file)
 {
 	if (file->is_inode())
 		_inode = DC::static_pointer_cast<InodeFile>(file)->inode();
 }
+
+FileDescriptor::FileDescriptor(Device *device) : _file(device)
+{}
 
 void FileDescriptor::set_options(int options)
 {
@@ -53,7 +57,7 @@ int FileDescriptor::seek(int offset, int whence)
 InodeMetadata FileDescriptor::metadata()
 {
 	if (_file->is_inode())
-		return DC::static_pointer_cast<InodeFile>(_file)->inode()->metadata();
+		return ((InodeFile *)_file)->inode()->metadata();
 
 	return {};
 }
@@ -73,6 +77,7 @@ size_t FileDescriptor::offset()
 
 size_t FileDescriptor::read_dir_entry(DirectoryEntry *buffer)
 {
+	if (!metadata().is_directory()) return 0;
 	int nbytes = _file->read_dir_entry(*this, offset(), buffer);
 	if (nbytes > 0) _seek += nbytes;
 	return nbytes;
