@@ -1,21 +1,19 @@
 #include <kernel/kstddef.h>
 #include <kernel/interrupt/idt.h>
 #include <kernel/interrupt/irq.h>
-#include <kernel/pit.h>
+#include <kernel/kstdio.h>
+#include "IRQHandler.h"
 
-void (*irq_routines[16])(struct registers *r) = {
-	0,0,0,0,0,0,0,0,
-	0,0,0,0,0,0,0,0
-};
+IRQHandler *handlers[16] = {nullptr};
 
-void irq_add_handler(int irq, void (*handler)(struct registers *r))
+void irq_set_handler(int irq, IRQHandler *handler)
 {
-	irq_routines[irq] = handler;
+	handlers[irq] = handler;
 }
 
 void irq_remove_handler(int irq)
 {
-	irq_routines[irq] = 0;
+	handlers[irq] = nullptr;
 }
 
 void irq_remap()
@@ -55,11 +53,9 @@ void irq_init()
 
 void irq_handler(struct registers *r)
 {
-	void (*handler)(struct registers *r);
-
-	handler = irq_routines[r->num - 32];
-	if (handler /*If it is not 0, AKA it is registered*/ ){
-		handler(r);
+	auto handler = handlers[r->num - 32];
+	if (handler != nullptr) {
+		handler->handle_irq(r);
 	}
 
 	if (r->num >= 40) {

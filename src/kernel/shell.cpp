@@ -14,9 +14,9 @@
 #include <common/stdlib.h>
 #include <common/defines.h>
 #include <kernel/filesystem/InodeFile.h>
+#include <kernel/device/TTYDevice.h>
 
-extern bool shell_mode;
-extern char kbdbuf[256];
+char kbdbuf[512];
 extern bool tasking_enabled;
 
 Shell::Shell() : current_dir(VFS::inst().root_ref())
@@ -29,13 +29,31 @@ void dummy()
 
 void Shell::shell()
 {
+	printf("O-------------------O\n");
+	printf("| Welcome to avuOS! |\n");
+	printf("O-------------------O\n");
+
+	auto tty_or_error = VFS::inst().open("/dev/tty0", O_RDONLY, 0, VFS::inst().root_ref());
+	if (tty_or_error.is_error()) {
+		printf("Could not open tty0: %d\n", tty_or_error.code());
+		return;
+	}
+	auto tty = tty_or_error.value();
+
 	while (!exitShell) {
 		printf("kernel:%s$ ", current_dir->get_full_path().c_str());
 
-		shell_mode = true;
-		get_input();
-
-		shell_mode = false;
+		size_t current_char = 0;
+		char read = 0;
+		while (true) {
+			size_t nread = tty->read((uint8_t *)(&read), 1);
+			if (nread) {
+				if (read == '\n') break;
+				if (read == '\b') current_char--;
+				else kbdbuf[current_char++] = read;
+			}
+		}
+		kbdbuf[current_char] = '\0';
 		set_color(0x07);
 
 		substr(index_of(' ', kbdbuf), kbdbuf, cmdbuf);
@@ -253,6 +271,7 @@ void Shell::command_eval(char *cmd, char *args)
 		IDE::PATAChannel channel = IDE::find_pata_channel(ATA_PRIMARY);
 		printf("%x:%x.%x Int %d\n", channel.address.bus, channel.address.slot, channel.address.function, PCI::read_byte(channel.address, PCI_INTERRUPT_LINE));
 	} else {
+		printf("Unrecognized command '%s'\n", cmd);
 		/*if (!find_and_execute(cmd, true)) {
 			printf("\"%s\" is not a recognized command, file, or program.\n", cmd);
 		}*/

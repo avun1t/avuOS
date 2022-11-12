@@ -43,11 +43,13 @@ echo "Installed grub!"
 echo "Setting up root filesystem..."
 echo "Setting up devices..."
 sudo mkdir -p /mnt/dev
+sudo mkdir -p /mnt/dev/input
 sudo mknod /mnt/dev/tty0 c 4 0
 sudo mknod /mnt/dev/hda b 3 0
 sudo mknod /mnt/dev/random c 1 8
 sudo mknod /mnt/dev/null c 1 3
 sudo mknod /mnt/dev/zero c 1 5
+sudo mknod /mnt/dev/input/keyboard c 13 0
 echo "Done setting up devices!"
 echo "Done setting up root filesystem!"
 

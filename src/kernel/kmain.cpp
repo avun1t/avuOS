@@ -21,6 +21,9 @@
 #include <kernel/filesystem/VFS.h>
 #include <common/vector.hpp>
 #include <kernel/device/TTYDevice.h>
+#include <common/circular_queue.hpp>
+#include <common/defines.h>
+#include <kernel/device/KeyboardDevice.h>
 
 int i;
 
@@ -51,13 +54,15 @@ void shell_process()
 // called from kthread
 void kmain_late()
 {
-	printf("init: Tasking initialized.\ninit: Initializing disk...\n");
+	new KeyboardDevice;
+
+	printf("init: Tasking initialized.\ninit: Initializing TTY...\n");
+
+	auto *tty0 = new TTYDevice(0, "tty0", 4, 0);
+	tty0->set_active();
+
+	printf("init: TTY initialized.\nInitializing disk...\n");
 	auto disk = DC::make_shared<PIODevice>(3, 0, boot_disk);
-	uint8_t sect[512];
-	disk->read_block(0, sect);
-	if (sect[1] == 0xFF) {
-		println_color("init: WARNING: I think you may be booting avuOS off of a USB drive or other unsupported device. Disk reading functions may not work.",0x0C);
-	}
 
 	auto part = DC::make_shared<PartitionDevice>(3, 1, disk, pio_get_first_partition(boot_disk));
 	auto part_descriptor = DC::make_shared<FileDescriptor>(part);
@@ -86,6 +91,8 @@ void kmain_late()
 		while (true);
 	}
 
+	printf("init: Done!\n");
+
 	add_process(create_process("shell", (uint32_t)shell_process));
 	while (get_process(2));
 	printf("\n\nShell exited.\n\n");
@@ -113,8 +120,6 @@ void interrupts_init()
 	isr_init();
 	idt_set_gate(0x80, (unsigned)syscall_handler, 0x08, 0x8E);
 	idt_set_gate(0x81, (unsigned)preempt, 0x08, 0x8E); // for preempting without PIT
-	irq_add_handler(1, keyboard_handler);
-	//irq_add_handler(0, pit_handler);
 	pit_init(200);
 	irq_init();
 	asm volatile("sti");

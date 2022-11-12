@@ -26,6 +26,7 @@ typedef unsigned char 			uint8_t;
 typedef signed char 			int8_t;
 typedef int 					int32_t;
 typedef uint32_t 				size_t;
+typedef int32_t					ssize_t;
 typedef unsigned int 			uint;
 
 #endif // __AVUOS_CSTDDEF_H_
