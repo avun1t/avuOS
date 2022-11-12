@@ -68,7 +68,7 @@ void Shell::shell()
 		set_color(0x0f);
 	}
 
-	__kill__();
+	get_current_process()->kill();
 }
 
 /*
@@ -105,6 +105,7 @@ void Shell::command_eval(char *cmd, char *args)
 		println("help: Shows this message.");
 		println("cat: Prints a file's contents.");
 		println("about: Prints some information.");
+		println("mem: Prints information about the memory.");
 		//println("partinfo: Prints information about the current partition.");
 		println("pagefault: Triggers a page fault, in case you wanted to.");
 		println("tasks: Prints all running tasks.");
@@ -173,6 +174,8 @@ void Shell::command_eval(char *cmd, char *args)
 		printf("%s\n", current_dir->get_full_path().c_str());
 	} else if (strcmp(cmd,"about")) {
 		println("avuOS 0.1");
+	} else if (strcmp(cmd, "mem")) {
+		printf("Used memory: %dKiB\n", Paging::get_used_mem());
 	} else if (strcmp(cmd,"cat")) {
 		auto desc_ret = VFS::inst().open(args, O_RDONLY, MODE_FILE, current_dir);
 		
@@ -222,7 +225,7 @@ void Shell::command_eval(char *cmd, char *args)
 		}*/
 	} else if (strcmp(cmd,"kill")) {
 		uint32_t pid = atoi(args);
-		process_t *proc = get_process(pid);
+		Process *proc = get_process(pid);
 
 		if (proc != NULL && proc->pid != 1) {
 			kill(proc);
@@ -313,6 +316,8 @@ void Shell::command_eval(char *cmd, char *args)
 			delete[] program_headers;
 			delete header;
 		}
+	} else if (strcmp(cmd, "exec")) {
+		ELF::load_and_execute(args);
 	} else if (strcmp(cmd, "lspci")) {
 		PCI::enumerate_devices([](PCI::Address address, PCI::ID id, void *dataPtr) {
 			uint8_t clss = PCI::read_byte(address, PCI_CLASS);

@@ -47,7 +47,7 @@ void KeyboardDevice::set_handler(KeyboardHandler *handler)
 	_handler = handler;
 }
 
-void KeyboardDevice::handle_irq(registers *regs)
+void KeyboardDevice::handle_irq(Registers *regs)
 {
 	while (true) {
 		auto status = inb(KBD_PORT_STATUS);

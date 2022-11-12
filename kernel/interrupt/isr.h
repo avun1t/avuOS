@@ -35,7 +35,7 @@ extern "C" void isr30();
 extern "C" void isr31();
 
 void isr_init();
-extern "C" void fault_handler(struct registers *r);
-void print_regs(struct registers *r);
+extern "C" void fault_handler(struct Registers *r);
+void print_regs(struct Registers *r);
 
 #endif // __ISR_H_

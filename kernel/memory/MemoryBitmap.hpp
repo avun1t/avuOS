@@ -7,6 +7,22 @@
 template<int total_pages>
 class MemoryBitmap {
 public:
+	MemoryBitmap()
+	{
+		// Doing this because the compiler doesn't like the array initializer :^)
+		// FIXME: Take a look at this again, may be an issue with the toolchain
+		for (auto & b : bitmap) {
+			b = 0;
+		}
+	}
+
+	void reset_bitmap()
+	{
+		for (auto & b : bitmap) {
+			b = 0;
+		}
+	}
+
 	size_t find_pages(size_t num_pages, size_t start_index)
 	{
 		// calculate number of pages (round-up division)
@@ -31,9 +47,9 @@ public:
 			// otherwise, start the next iteration of the loop at the next page after that chunk we just checked
 			cur_page = find_one_page(page);
 
-			// if we've made it past the end of the memory bitmap, return 0. No memory available.
+			// if we've made it past the end of the memory bitmap, return -1. No memory available.
 			if (cur_page + num_pages >= total_pages)
-				return 0;
+				return -1;
 		}
 	}
 
@@ -50,7 +66,7 @@ public:
 			start_bit = 0;
 		}
 
-		return 0;
+		return -1;
 	}
 
 	bool is_page_used(size_t page)
@@ -89,7 +105,7 @@ public:
 	}
 
 private:
-	uint32_t bitmap[total_pages / 32] {0};
+	uint32_t bitmap[total_pages / 32];
 	size_t _used_pages = 0;
 };
 

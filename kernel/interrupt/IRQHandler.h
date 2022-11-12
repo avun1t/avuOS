@@ -6,7 +6,7 @@
 class IRQHandler {
 public:
 	IRQHandler(int irq);
-	virtual void handle_irq(registers *reg) = 0;
+	virtual void handle_irq(Registers *reg) = 0;
 };
 
 #endif // __AVUOS_IRQHANDLER_H_

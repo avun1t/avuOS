@@ -1,5 +1,8 @@
 #include <kernel/tasking/elf.h>
 #include <common/defines.h>
+#include <kernel/filesystem/VFS.h>
+#include <kernel/memory/paging.h>
+#include "tasking.h"
 
 bool ELF::is_valid_elf_header(elf32_header *header)
 {
@@ -16,3 +19,6 @@ bool ELF::can_execute(elf32_header *header)
 	if (header->type != ELF_TYPE_EXECUTABLE) return false;
 	return header->endianness == ELF_LITTLE_ENDIAN;
 }
+
+void ELF::load_and_execute(DC::string file)
+{}

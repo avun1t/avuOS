@@ -51,7 +51,7 @@ void irq_init()
 	idt_set_gate(47, (unsigned)irq15, 0x08, 0x8E);
 }
 
-void irq_handler(struct registers *r)
+void irq_handler(struct Registers *r)
 {
 	auto handler = handlers[r->num - 32];
 	if (handler != nullptr) {

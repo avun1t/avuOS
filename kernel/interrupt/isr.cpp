@@ -53,7 +53,7 @@ bool fpanic(char *a, char *b, uint32_t sig)
 	}
 }
 
-void fault_handler(struct registers *r)
+void fault_handler(struct Registers *r)
 {
 	if (r->num < 32) {
 		switch (r->num) {
@@ -65,7 +65,7 @@ void fault_handler(struct registers *r)
 			break;
 
 			case 13: //GPF
-			if (fpanic("GENERAL_PROTECTION_FAULT", "Instruction pointer, error code, and registers:", SIGILL)) {
+			if (fpanic("GENERAL_PROTECTION_FAULT", "Instruction pointer, error code, and Registers:", SIGILL)) {
 				print_regs(r);
 				while(true);
 			}
@@ -73,8 +73,9 @@ void fault_handler(struct registers *r)
 
 			case 14: //Page fault
 			if (get_current_process() == nullptr || get_current_process()->pid == 1) {
-				page_fault_handler(r);
+				Paging::page_fault_handler(r);
 			} else {
+				//page_fault_handler(r);
 				notify(SIGSEGV);
 			}
 			break;
@@ -91,7 +92,7 @@ void fault_handler(struct registers *r)
 	}
 }
 
-void print_regs(struct registers *r)
+void print_regs(struct Registers *r)
 {
 	asm volatile("mov %%ss, %%eax":"=a"(r->ss));
 
