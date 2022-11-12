@@ -19,6 +19,8 @@
 #include <kernel/device/PartitionDevice.h>
 #include <kernel/kmain.h>
 #include <kernel/filesystem/VFS.h>
+#include <common/vector.hpp>
+#include <kernel/device/TTYDevice.h>
 
 int i;
 

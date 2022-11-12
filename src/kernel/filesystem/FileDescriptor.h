@@ -21,6 +21,7 @@ public:
 
 	int seek(int offset, int whence);
 	size_t read(uint8_t *buffer, size_t count);
+	size_t write(const uint8_t *buffer, size_t counut);
 	size_t read_dir_entry(DirectoryEntry *buffer);
 	size_t offset();
 
@@ -31,6 +32,7 @@ private:
 
 	bool _readable {false};
 	bool _writable {false};
+	bool _can_seek {true};
 
 	int _seek {0};
 };

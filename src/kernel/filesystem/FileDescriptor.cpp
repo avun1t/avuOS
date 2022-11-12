@@ -12,7 +12,9 @@ FileDescriptor::FileDescriptor(DC::shared_ptr<File> file) : _file(file.get()), _
 }
 
 FileDescriptor::FileDescriptor(Device *device) : _file(device)
-{}
+{
+	_can_seek = !device->is_character_device();
+}
 
 void FileDescriptor::set_options(int options)
 {
@@ -32,6 +34,7 @@ bool FileDescriptor::writable()
 
 int FileDescriptor::seek(int offset, int whence)
 {
+	if (!_can_seek) return -ESPIPE;
 	size_t new_seek = _seek;
 
 	switch (whence) {
@@ -66,7 +69,7 @@ size_t FileDescriptor::read(uint8_t *buffer, size_t count)
 {
 	if (_seek + count < 0) return -EOVERFLOW;
 	int ret = _file->read(*this, offset(), buffer, count);
-	if (ret > 0) _seek += ret;
+	if (_can_seek && ret > 0) _seek += ret;
 	return ret;
 }
 
@@ -79,6 +82,14 @@ size_t FileDescriptor::read_dir_entry(DirectoryEntry *buffer)
 {
 	if (!metadata().is_directory()) return 0;
 	int nbytes = _file->read_dir_entry(*this, offset(), buffer);
-	if (nbytes > 0) _seek += nbytes;
+	if (_can_seek && nbytes > 0) _seek += nbytes;
 	return nbytes;
+}
+
+size_t FileDescriptor::write(const uint8_t *buffer, size_t count)
+{
+	if (_seek + count < 0) return -EOVERFLOW;
+	int ret = _file->write(*this, offset(), buffer, count);
+	if (_can_seek && ret > 0) _seek += ret;
+	return ret;
 }
