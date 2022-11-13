@@ -3,7 +3,7 @@
 #include <kernel/kstdio.h>
 #include <kernel/interrupt/idt.h>
 #include <kernel/interrupt/isr.h>
-#include <kernel/tasking/tasking.h>
+#include <kernel/tasking/TaskManager.h>
 
 void isr_init()
 {
@@ -43,12 +43,12 @@ void isr_init()
 
 bool fpanic(char *a, char *b, uint32_t sig)
 {
-	if (get_current_process()->pid == 1) {
+	if (TaskManager::current_process()->pid() == 1) {
 		cli();
 		PANIC(a,b,false);
 		return true;
 	} else {
-		notify(sig);
+		TaskManager::notify(sig);
 		return false;
 	}
 }
@@ -72,11 +72,11 @@ void fault_handler(struct Registers *r)
 			break;
 
 			case 14: //Page fault
-			if (get_current_process() == nullptr || get_current_process()->pid == 1) {
+			if (TaskManager::current_process() == nullptr || TaskManager::current_process()->pid() == 1) {
 				Paging::page_fault_handler(r);
 			} else {
 				//page_fault_handler(r);
-				notify(SIGSEGV);
+				TaskManager::notify(SIGSEGV);
 			}
 			break;
 

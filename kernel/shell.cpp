@@ -4,7 +4,7 @@
 #include <kernel/shell.h>
 #include <kernel/filesystem/Ext2.h>
 #include <kernel/memory/kliballoc.h>
-#include <kernel/tasking/tasking.h>
+#include <kernel/tasking/TaskManager.h>
 #include <kernel/tasking/elf.h>
 #include <kernel/pci/pci.h>
 #include <kernel/memory/paging.h>
@@ -68,7 +68,7 @@ void Shell::shell()
 		set_color(0x0f);
 	}
 
-	get_current_process()->kill();
+	TaskManager::current_process()->kill();
 }
 
 /*
@@ -178,7 +178,6 @@ void Shell::command_eval(char *cmd, char *args)
 		printf("Used memory: %dKiB\n", Paging::get_used_mem());
 	} else if (strcmp(cmd,"cat")) {
 		auto desc_ret = VFS::inst().open(args, O_RDONLY, MODE_FILE, current_dir);
-		
 		if (desc_ret.is_error()) {
 			switch (desc_ret.code()) {
 				case -ENOENT:
@@ -189,14 +188,16 @@ void Shell::command_eval(char *cmd, char *args)
 					break;
 				case -ENODEV:
 					printf("Cannot cat '%s': no such device\n", args);
+					break;
 				default:
 					printf("Cannot cat '%s': Error %d\n", args, desc_ret.code());
 			}
 		} else {
 			auto desc = desc_ret.value();
-			if (desc->metadata().is_directory()) printf("Cannot cat '%s': is a directory\n", args);
-			else {
-				uint8_t* buf = new uint8_t[513];
+			if (desc->metadata().is_directory()) {
+				printf("Cannot cat '%s': is a directory\n", args);
+			} else {
+				auto* buf = new uint8_t[513];
 				size_t nread;
 				while ((nread = desc->read(buf, 512))) {
 					buf[nread] = '\0';
@@ -218,25 +219,25 @@ void Shell::command_eval(char *cmd, char *args)
 	} else if (strcmp(cmd,"exit")) {
 		exitShell = true;
 	} else if (strcmp(cmd,"tasks")) {
-		print_tasks();
+		TaskManager::print_tasks();
 	} else if (strcmp(cmd,"bg")) {
 		/*if (strcmp(args,"") || !find_and_execute(args, false)) {
 			printf("Cannot find \"%s\".\n", args);
 		}*/
 	} else if (strcmp(cmd,"kill")) {
 		uint32_t pid = atoi(args);
-		Process *proc = get_process(pid);
-
-		if (proc != NULL && proc->pid != 1) {
-			kill(proc);
-			printf("Sent SIGTERM (%d) to %s (PID %d).\n", SIGTERM, proc->name, proc->pid);
-		} else if (proc->pid == 1) {
+		Process *proc = TaskManager::process_for_pid(pid);
+		
+		if (proc != NULL && proc->pid() != 1) {
+			TaskManager::kill(proc);
+			printf("Sent SIGTERM (%d) to %s (PID %d).\n", SIGTERM, proc->name().c_str(), proc->pid());
+		} else if (proc->pid() == 1) {
 			printf("Cannot kill kernel!\n");
 		} else {
 			printf("No process with PID %d.\n", pid);
 		}
 	} else if (strcmp(cmd, "dummy")) {
-		add_process(create_process("dummy", (uint32_t)dummy));
+		TaskManager::add_process(Process::create_kernel("dummy", dummy));
 	} else if (strcmp(cmd, "readelf")) {
 		auto desc_ret = VFS::inst().open(args, O_RDONLY, MODE_FILE, current_dir);
 		if (desc_ret.is_error()) {

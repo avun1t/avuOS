@@ -40,6 +40,8 @@
 
 namespace Paging {
 	class PageTable;
+	class PageDirectory;
+	extern PageDirectory kernel_page_directory;
 
 	extern "C" long _KERNEL_START;
 	extern "C" long _KERNEL_END;
