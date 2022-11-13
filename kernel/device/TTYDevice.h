@@ -9,7 +9,7 @@
 
 class TTYDevice : public CharacterDevice, public KeyboardHandler {
 public:
-	static TTYDevice *current_tty();
+	static DC::shared_ptr<TTYDevice> current_tty();
 
 	TTYDevice(size_t id, const DC::string &name, unsigned major, unsigned minor);
 
@@ -24,7 +24,7 @@ protected:
 
 private:
 	static size_t _current_tty;
-	static TTYDevice *_ttys[NUM_TTYS];
+	static DC::shared_ptr<TTYDevice> _ttys[NUM_TTYS];
 
 	void handle_key(KeyEvent) override;
 
