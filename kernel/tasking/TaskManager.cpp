@@ -52,10 +52,10 @@ void TaskManager::print_tasks()
 {
 	Process *current = kernel_proc;
 	printf("Running processes: (PID, name, state, * = is current)\n");
-	do{
+	do {
 		printf("%c[%d] '%s' %d\n", current == current_proc ? '*' : ' ', current->pid(), current->name().c_str(), current->state);
 		current = current->next;
-	}while(current != kernel_proc);
+	} while(current != kernel_proc);
 }
 
 bool &TaskManager::enabled()
@@ -80,10 +80,8 @@ void TaskManager::init()
 	kernel_proc->next = kernel_proc;
 	kernel_proc->prev = kernel_proc;
 	current_proc = kernel_proc;
-	kernel_proc->init();
-
-	//pop all of the registers off of the stack and get started
-	PANIC("Failed to init tasking", "Something went wrong..", true);
+	
+	preempt_init_asm(current_proc->registers.esp);
 }
 
 Process *TaskManager::current_process()
@@ -124,39 +122,8 @@ void TaskManager::kill(Process *p)
 
 void TaskManager::preempt()
 {
-	//push current_proc process' registers on to its stack
-	asm volatile("push %eax");
-	asm volatile("push %ebx");
-	asm volatile("push %ecx");
-	asm volatile("push %edx");
-	asm volatile("push %esi");
-	asm volatile("push %edi");
-	asm volatile("push %ebp");
-	asm volatile("push %ds");
-	asm volatile("push %es");
-	asm volatile("push %fs");
-	asm volatile("push %gs");
-	asm volatile("mov %%esp, %%eax":"=a"(current_proc->registers.esp));
-
-	// Pop all of next process' registers off of its stack
-	current_proc = current_proc->next;
-	asm volatile("mov %%eax, %%esp" ::"a"(current_proc->registers.esp));
-	asm volatile("movl %0, %%cr3" ::"r"(current_proc->page_directory_loc));
-
-	if (!current_proc->inited) {
-		current_proc->init();
-		return;
-	}
-	
-	asm volatile("pop %gs");
-	asm volatile("pop %fs");
-	asm volatile("pop %es");
-	asm volatile("pop %ds");
-	asm volatile("pop %ebp");
-	asm volatile("pop %edi");
-	asm volatile("pop %esi");
-	asm volatile("pop %edx");
-	asm volatile("pop %ecx");
-	asm volatile("pop %ebx");
-	asm volatile("pop %eax");
+	auto old_proc = current_proc;
+	current_proc = old_proc->next;
+	if (current_proc->ring == 3) tss.esp0 = (uint32_t)current_proc->kernel_stack();
+	preempt_asm(&old_proc->registers.esp, &current_proc->registers.esp, current_proc->page_directory_loc);
 }

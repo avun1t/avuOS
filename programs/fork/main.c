@@ -13,9 +13,12 @@
     Copyright (c) avun1t 2022. All rights reserved.
 */
 
-// A simple program that does nothing.
+#include <unistd.h>
+#include <stdio.h>
 
 int main()
 {
+	fork();
+	printf("Hello!");
 	return 0;
 }

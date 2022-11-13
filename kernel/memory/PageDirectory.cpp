@@ -35,6 +35,7 @@ namespace Paging {
 			kernel_entries[i].value = 0;
 			kernel_entries[i].data.present = true;
 			kernel_entries[i].data.read_write = true;
+			kernel_entries[i].data.user = true;
 			kernel_entries[i].data.set_address((size_t)&kernel_page_tables[i] - HIGHER_HALF);
 		}
 	}
@@ -61,6 +62,7 @@ namespace Paging {
 		PageTable::Entry *entry = &kernel_page_tables[directory_index].entries()[table_index];
 		entry->data.present = true;
 		entry->data.read_write = read_write;
+		entry->data.user = true;
 		entry->data.set_address(physaddr);
 	}
 
@@ -196,6 +198,7 @@ namespace Paging {
 		PageTable::Entry *entry = &_page_tables[directory_index]->entries()[table_index];
 		entry->data.present = true;
 		entry->data.read_write = true;
+		entry->data.user = true;
 		entry->data.set_address(physaddr);
 	}
 
@@ -292,6 +295,7 @@ namespace Paging {
 		//Find the entry in the page tables table that will point to the page storing this page table and set it up
 		PageTable::Entry *tables_table = &_page_tables_table->entries()[tables_index];
 		tables_table->data.set_address(page * PAGE_SIZE);
+		tables_table->data.user = true;
 		tables_table->data.present = true;
 		tables_table->data.read_write = true;
 
@@ -302,6 +306,7 @@ namespace Paging {
 		PageDirectory::Entry *direntry = &_entries[tables_index];
 		direntry->data.set_address(page * PAGE_SIZE);
 		direntry->data.present = true;
+		direntry->data.user = true;
 		direntry->data.read_write = true;
 		return table;
 	}
@@ -321,17 +326,53 @@ namespace Paging {
 		//Only go to entry 1022 because 1023 (the last one) is the process-specific page table table
 		for (auto i = 768; i < 1023; i++){
 			auto ki = i - 768;
-			_entries[i] = kernel_entries[ki];
+			_entries[i].value = kernel_entries[ki].value;
 			_page_tables_physaddr[i] = kernel_page_tables_physaddr[ki];
 		}
 
 		_entries[1023].data.present = true;
 		_entries[1023].data.read_write = true;
+		_entries[1023].data.user = true;
 		_entries[1023].data.set_address(get_physaddr((size_t)_page_tables_table));
 	}
 
 	void PageDirectory::set_entries(Entry *entries)
 	{
 		_entries = entries;
+	}
+
+	void PageDirectory::fork_from(PageDirectory *directory)
+	{
+		// TODO: Don't actually copy all memory - mark read only
+		// Iterate through every entry of the page directory we're copying from
+		for (auto table = 0; table < 768; table++) {
+			// If the entry is present, continue
+			if (directory->_entries[table].data.present) {
+				PageTable *page_table = directory->_page_tables[table];
+
+				// Iterate through every page table entry
+				for (auto entry = 0; entry < 1024; entry++) {
+					PageTable::Entry *pte = &page_table->entries()[entry];
+
+					// If the entry is present, copy it
+					if (pte->data.present) {
+						// Allocate a kernel page and point it to the page the entry points to
+						size_t vpage_number = kernel_vmem_bitmap.find_one_page(0) + 0xC0000;
+						void *vpage = (void *)(vpage_number * PAGE_SIZE);
+						k_map_page(pte->data.get_address(), (size_t)vpage, true);
+
+						size_t virtaddr = (entry * PAGE_SIZE) + (table * PAGE_SIZE * 1024);
+						if (!allocate_pages(virtaddr, PAGE_SIZE, true)) {
+							PANIC("FORK_PAGEALLOC_FAIL", "Failed to allocate virtual pages during a fork.", true);
+						}
+
+						memcpy((void *)virtaddr, vpage, PAGE_SIZE);
+
+						k_unmap_page((size_t)vpage);
+						_page_tables[table]->entries()[entry].data.read_write = pte->data.read_write;
+					}
+				}
+			}
+		}
 	}
 }
