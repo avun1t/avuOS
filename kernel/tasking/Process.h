@@ -53,7 +53,7 @@ public:
 	// syscalls
 	ssize_t sys_read(int fd, uint8_t *buf, size_t count);
 	ssize_t sys_write(int fd, uint8_t *buf, size_t count);
-
+	size_t sys_sbrk(int i);
 private:
 	Process(const DC::string &name, size_t entry_point, bool kernel = false);
 
@@ -61,6 +61,7 @@ private:
 
 	DC::string _name = "";
 	pid_t _pid = 0;
+	size_t current_brk = 0;
 };
 
 #endif // __AVUOS_PROCESS_H_
