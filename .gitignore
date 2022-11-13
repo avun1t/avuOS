@@ -23,5 +23,8 @@ cmake-build-*/
 # avuOS specific
 toolchain/tools
 toolchain/build
+
+base/bin
+
 src/kernel/yuku32
 avuOS.img
