@@ -6,7 +6,7 @@
 - Typing commands into the kernel shell
 - Reading files off of the hard drive
 - Reading devices as files(`/dev/hda`, `/dev/zero`, `/dev/random`, etc.)
-- Basic multitasking (no executables yet)
+- Basic multitasking (executing ELfs with only one syscall yet
 
 ### Known Issues / Limitations
 - It kinda sucks
