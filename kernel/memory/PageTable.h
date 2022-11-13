@@ -43,12 +43,18 @@ namespace Paging {
 			uint32_t value;
 		} Entry;
 
-		PageTable();
+		PageTable(Entry *entries_ptr);
+		PageTable() = default;
+		~PageTable();
+
+		void set_copy_on_write();
+		bool is_copy_on_write();
+
 		Entry* entries();
 		Entry& operator[](int index);
 	private:
-		Entry _entries[1024] __attribute__((aligned(4096))) = {{.value=0}};
-		// CANNOT have any other members with current pagetable allocation scheme; the pointer to the pagetable must be the pointer to its entries
+		Entry *_entries = nullptr;
+		bool _copy_on_write = false;
 	};
 }
 

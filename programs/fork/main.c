@@ -18,7 +18,7 @@
 
 int main()
 {
-	fork();
-	printf("Hello!");
+	pid_t pid = fork();
+	printf("Hello from %s!\n", pid == 0 ? "child" : "parent");
 	return 0;
 }
