@@ -19,6 +19,3 @@ bool ELF::can_execute(elf32_header *header)
 	if (header->type != ELF_TYPE_EXECUTABLE) return false;
 	return header->endianness == ELF_LITTLE_ENDIAN;
 }
-
-void ELF::load_and_execute(DC::string file)
-{}

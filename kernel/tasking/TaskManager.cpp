@@ -7,6 +7,8 @@
 #include <kernel/kmain.h>
 #include <common/cstring.h>
 
+TSS TaskManager::tss;
+
 Process *current_proc;
 Process *kernel_proc;
 uint32_t __cpid__ = 0;
@@ -39,6 +41,11 @@ void TaskManager::print_tasks()
 		printf("%c[%d] '%s' %d\n", current == current_proc ? '*' : ' ', current->pid(), current->name().c_str(), current->state);
 		current = current->next;
 	}while(current != kernel_proc);
+}
+
+bool &TaskManager::enabled()
+{
+	return tasking_enabled;
 }
 
 void TaskManager::preempt_now()
@@ -91,12 +98,10 @@ void TaskManager::kill(Process *p)
 	if (process_for_pid(p->pid()) != NULL) {
 		tasking_enabled = false;
 
-		kfree((uint8_t *)p->stack);
-		kfree(p);
-
 		p->prev->next = p->next;
 		p->next->prev = p->prev;
 		p->state = PROCESS_DEAD;
+		delete p;
 
 		tasking_enabled = true;
 	}
@@ -117,15 +122,17 @@ void TaskManager::preempt()
 	asm volatile("push %fs");
 	asm volatile("push %gs");
 	asm volatile("mov %%esp, %%eax":"=a"(current_proc->registers.esp));
+
+	// Pop all of next process' registers off of its stack
 	current_proc = current_proc->next;
+	asm volatile("mov %%eax, %%esp" ::"a"(current_proc->registers.esp));
+	asm volatile("movl %0, %%cr3" ::"r"(current_proc->page_directory_loc));
 
 	if (!current_proc->inited) {
 		current_proc->init();
 		return;
 	}
 	
-	//pop all of next process' registers off of its stack
-	asm volatile("mov %%eax, %%esp": :"a"(current_proc->registers.esp));
 	asm volatile("pop %gs");
 	asm volatile("pop %fs");
 	asm volatile("pop %es");
@@ -133,7 +140,6 @@ void TaskManager::preempt()
 	asm volatile("pop %ebp");
 	asm volatile("pop %edi");
 	asm volatile("pop %esi");
-	asm volatile("movl %%eax, %%cr3": : "a"(current_proc->page_directory_loc)); //Load page directory for process
 	asm volatile("pop %edx");
 	asm volatile("pop %ecx");
 	asm volatile("pop %ebx");
