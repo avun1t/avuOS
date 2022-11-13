@@ -1,4 +1,3 @@
-[bits 32]
 global gdt_flush
 extern gp
 gdt_flush:

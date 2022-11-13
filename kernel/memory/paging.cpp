@@ -1,3 +1,18 @@
+/*
+	This file is part of avuOS.
+	avuOS is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	avuOS is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with avuOS.  If not, see <https://www.gnu.org/licenses/>.
+	Copyright (c) avun1t 2022. All rights reserved.
+*/
+
 #include <kernel/kstddef.h>
 #include <kernel/kstdio.h>
 #include <kernel/memory/paging.h>
@@ -61,9 +76,7 @@ namespace Paging {
 	void page_fault_handler(struct Registers *r)
 	{
 		cli();
-		//uint32_t err_pos;
-		//asm("mov %0, %%cr2" : "=r" (err_pos));
-		bool other = false;
+
 		switch (r->err_code) {
 			case 0:
 				PANIC("KRNL_READ_NONPAGED_AREA", "", false);
@@ -91,11 +104,12 @@ namespace Paging {
 				break;
 			default:
 				PANIC("UNKNOWN_PAGE_FAULT", "", false);
-				other = true;
 				break;
 		}
 
-		//printf("At 0x%X\n\n",err_pos);
+		uint32_t err_pos;
+		asm("mov %%cr2, %0" :"=r"(err_pos));
+		printf("Virtual address: 0x%X\n\n", err_pos);
 		print_regs(r);
 		while (true);
 	}

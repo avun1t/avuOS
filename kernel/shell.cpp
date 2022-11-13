@@ -1,3 +1,18 @@
+/*
+	This file is part of avuOS.
+	avuOS is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	avuOS is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with avuOS.  If not, see <https://www.gnu.org/licenses/>.
+	Copyright (c) avun1t 2022. All rights reserved.
+*/
+
 #include <kernel/kstddef.h>
 #include <kernel/keyboard.h>
 #include <kernel/kstdio.h>
@@ -79,7 +94,6 @@ void Shell::command_eval(char *cmd, char *args)
 		println("tasks: Prints all running tasks.");
 		println("bg: Run a program in the background.");
 		println("kill: Kill a program.");
-		println("dummy: Create a dummy process.");
 		println("readelf: Print info about an ELF executable.");
 		println("lspci: Lists PCI devices.");
 		println("exit: Pretty self explanatory.");
@@ -200,8 +214,6 @@ void Shell::command_eval(char *cmd, char *args)
 		} else {
 			printf("No process with PID %d.\n", pid);
 		}
-	} else if (strcmp(cmd, "dummy")) {
-		TaskManager::add_process(Process::create_kernel("dummy", dummy));
 	} else if (strcmp(cmd, "readelf")) {
 		auto desc_ret = VFS::inst().open(args, O_RDONLY, MODE_FILE, current_dir);
 		if (desc_ret.is_error()) {

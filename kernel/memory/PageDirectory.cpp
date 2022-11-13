@@ -1,3 +1,18 @@
+/*
+	This file is part of avuOS.
+	avuOS is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	avuOS is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with avuOS.  If not, see <https://www.gnu.org/licenses/>.
+	Copyright (c) avun1t 2022. All rights reserved.
+*/
+
 #include "PageDirectory.h"
 
 namespace Paging {
@@ -37,6 +52,7 @@ namespace Paging {
 		if (kernel_vmem_bitmap.is_page_used(page)) {
 			PANIC("KRNL_MAP_MAPPED_PAGE", "The kernel tried to map a page that was already mapped.", true);
 		}
+
 		//Set this page as used.
 		kernel_vmem_bitmap.set_page_used(page);
 		//The index into the page table of this page
@@ -78,7 +94,7 @@ namespace Paging {
 		size_t pages = (memsize + PAGE_SIZE - 1) / PAGE_SIZE;
 
 		// First, find a block of $pages contigous virtual pages in the kernel space
-		auto vpage = kernel_vmem_bitmap.find_pages(pages, 0) + 0xC000;
+		auto vpage = kernel_vmem_bitmap.find_pages(pages, 0) + 0xC0000;
 		if (vpage == -1) {
 			PANIC("KRNL_NO_VMEM_SPACE", "The kernel ran out of virtual memory space.", true);
 		}
@@ -243,7 +259,7 @@ namespace Paging {
 		}
 	}
 
-	bool PageDirectory::allocate_pages(size_t vaddr, size_t memsize)
+	bool PageDirectory::allocate_pages(size_t vaddr, size_t memsize, bool read_write)
 	{
 		ASSERT(vaddr % PAGE_SIZE == 0 && vaddr < HIGHER_HALF);
 		auto start_page = vaddr / PAGE_SIZE;
@@ -259,7 +275,7 @@ namespace Paging {
 			if (!phys_page)
 				PANIC("NO_MEM", "There's no more physical memory left.", true);
 
-			map_page(phys_page * PAGE_SIZE, vaddr + i * PAGE_SIZE, true);
+			map_page(phys_page * PAGE_SIZE, vaddr + i * PAGE_SIZE, read_write);
 		}
 
 		return true;

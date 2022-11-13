@@ -5,7 +5,7 @@
 set(CMAKE_CXX_STANDARD 11)
 
 ENABLE_LANGUAGE(ASM_NASM)
-SET_SOURCE_FILES_PROPERTIES(asm/startup.s PROPERTIES LANGUAGE ASM_NASM)
+SET_SOURCE_FILES_PROPERTIES(asm/startup.s asm/int.s asm/syscall.s asm/gdt.s PROPERTIES LANGUAGE ASM_NASM)
 
 SET(CMAKE_CXX_FLAGS "-ffreestanding -O0 -Woverflow -nostdlib -fno-rtti -fpermissive -fno-stack-protector -fno-exceptions -Wno-write-strings -fbuiltin -nostdlib -nostdinc -nostdinc++ -std=c++2a")
 
@@ -15,6 +15,9 @@ SET(CMAKE_ASM_NASM_COMPILE_OBJECT "<CMAKE_ASM_NASM_COMPILER> <FLAGS> -o <OBJECT>
 
 SET(KERNEL_SRCS
 		asm/startup.s
+		asm/int.s
+		asm/syscall.s
+		asm/gdt.s
 		kmain.cpp
 		pit.cpp
 		shell.cpp
@@ -50,7 +53,6 @@ SET(KERNEL_SRCS
 		filesystem/InodeFile.cpp
 		filesystem/InodeMetadata.cpp
 		filesystem/FileBasedFilesystem.cpp
-		filesystem/DirectoryEntry.cpp
 		icxxabi.cpp
 		device/TTYDevice.cpp
 		device/CharacterDevice.cpp
@@ -78,3 +80,5 @@ SET_TARGET_PROPERTIES(yuku32 PROPERTIES LINK_DEPENDS ${LINKER_SCRIPT})
 SET(CMAKE_CXX_LINK_EXECUTABLE "ld <OBJECTS> -T ${LINKER_SCRIPT} -melf_i386 -Map kernel.map -o <TARGET> <LINK_LIBRARIES>")
 
 TARGET_INCLUDE_DIRECTORIES(yuku32 PRIVATE ${CMAKE_SOURCE_DIR})
+
+INSTALL(TARGETS yuku32 RUNTIME DESTINATION boot)

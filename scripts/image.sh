@@ -36,9 +36,8 @@ mount "${dev}p1" mnt/ || (echo "Couldn't mount." && exit 1)
 echo "Mounted."
 
 echo "Copying base and kernel to filesystem..."
-cp -r "${SOURCE_DIR}/base/"* mnt/ || (echo "Couldn't copy." && exit 1)
-mkdir -p mnt/boot || (echo "Couldn't make mnt/boot." && exit 1)
-cp kernel/yuku32 mnt/boot || (echo "Couldn't copy kernel." && exit 1)
+cp -R "${SOURCE_DIR}/base/"* mnt/ || (echo "Couldn't copy base." && exit 1)
+cp -R "root/"* mnt/ || (echo "Couldn't copy root." && exit 1)
 echo "Copied."
 
 echo "Installing grub..."
@@ -49,18 +48,18 @@ echo "Installed grub!"
 echo "Setting up root filesystem..."
 echo "Setting up devices..."
 mkdir -p mnt/dev
+mkdir -p mnt/dev/input
 mknod mnt/dev/tty0 c 4 0
 mknod mnt/dev/hda b 3 0
 mknod mnt/dev/random c 1 8
 mknod mnt/dev/null c 1 3
 mknod mnt/dev/zero c 1 5
-mkdir -p mnt/dev/input
 mknod mnt/dev/input/keyboard c 13 0
 echo "Done setting up devices!"
 echo "Done setting up root filesystem!"
 
 echo "Unmounting and cleaning up loopback device..."
-umount mnt/ || (echo "Couldn't unmount." && exit 1)
-rmdir mnt || (echo "Couldn't rmdir mnt." && exit 1)
+umount mnt || (echo "Couldn't unmount." && exit 1)
+rm -rf mnt || (echo "Couldn't rm mnt." && exit 1)
 losetup -d "${dev}" || (echo "Couldn't clean up loopback device." && exit 1)
 echo "Done! Saved to avuOS.img."

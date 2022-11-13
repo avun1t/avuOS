@@ -1,82 +1,127 @@
 #!/bin/bash
 set -e
 
-printf "Building avuOS toolchain...\n"
+source "./toolchain-common.sh"
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")"  && pwd)"
-TARGET="i686-pc-avuos"
-PREFIX="$DIR/tools"
-BUILD="$DIR/build"
-NUM_JOBS=$(nproc)
+build_binutils () {
+	pushd .
+	cd "$BUILD"
 
-BINUTILS_VERSION="2.34"
-GCC_VERSION="9.3.0"
+	if [ "$1" == "edited" ]; then
+		CONFIGURE_SCRIPT="$EDIT/$BINUTILS_FILE/configure"
+		cd "$EDIT"
+	else
+		CONFIGURE_SCRIPT="$BUILD/$BINUTILS_FILE/configure"
+		download-binutils
+	fi
 
-BINUTILS_FILE="binutils-$BINUTILS_VERSION"
-GCC_FILE="gcc-$GCC_VERSION"
+	printf "Configuring binutils...\n"
+	mkdir -p "binutils-$BINUTILS_VERSION-build"
+	cd "binutils-$BINUTILS_VERSION-build"
+	"$CONFIGURE_SCRIPT" --prefix="$PREFIX" --target="$TARGET" --with-sysroot="$SYSROOT" --disable-nls --enable-shared || exit 1
+	printf "Making binutils...\n"
+	make -j "$NUM_JOBS" || exit 1
+	printf "Installing binutils...\n"
+	make install || exit 1
+	printf "binutils installed!\n"
+	cd ..
 
-BINUTILS_URL="https://ftp.gnu.org/gnu/binutils/$BINUTILS_FILE.tar.gz"
-GCC_URL="https://ftp.gnu.org/gnu/gcc/gcc-$GCC_VERSION/$GCC_FILE.tar.gz"
+	popd
+}
 
-if [ -d "$PREFIX/bin" ]; then
-	printf "Toolchain already built. Delete %s if you'd like to rebuild it.\n" "$PREFIX"
-	exit
-fi
+build_gcc () {
+	pushd .
+	cd "$BUILD"
+
+	if [ "$1" == "edited" ]; then
+		CONFIGURE_SCRIPT="$EDIT/$GCC_FILE/configure"
+		cd "$EDIT"
+	else
+		CONFIGURE_SCRIPT="$BUILD/$GCC_FILE/configure"
+		download-gcc
+	fi
+
+	printf "Configuring gcc...\n"
+	mkdir -p "gcc-$GCC_VERSION-build"
+	cd "gcc-$GCC_VERSION-build"
+	"$CONFIGURE_SCRIPT" --prefix="$PREFIX" --target="$TARGET" --disable-nls --enable-languages=c,c++ --with-sysroot="$SYSROOT" --with-newlib --enable-shared || exit 1
+	printf "Making gcc...\n"
+	make -j "$NUM_JOBS" all-gcc all-target-libgcc || exit 1
+	printf "Installing gcc...\n"
+	make install-gcc install-target-libgcc || exit 1
+	printf "gcc installed!\n"
+	cd ..
+
+	popd
+}
+
+build_newlib () {
+	pushd .
+	cd "$BUILD"
+
+	export PATH="$PREFIX/bin":$PATH
+
+	if [ "$1" == "edited" ]; then
+		CONFIGURE_SCRIPT="$EDIT/$NEWLIB_FILE/configure"
+		cd "$EDIT"
+	else
+		CONFIGURE_SCRIPT="$BUILD/$NEWLIB_FILE/configure"
+		download-newlib
+	fi
+
+	mkdir -p "$SYSROOT"
+	printf "Configuring newlib...\n"
+	mkdir -p "$BUILD/newlib-$NEWLIB_VERSION-build"
+	cd "$BUILD/newlib-$NEWLIB_VERSION-build"
+	"$CONFIGURE_SCRIPT" --prefix="/usr" --target="i686-pc-avuos" || exit 1
+	printf "Making newlib...\n"
+	make -j "$NUM_JOBS" all || exit 1
+	printf "Installing newlib...\n"
+	if [ -d "${SYSROOT}/usr" ]; then
+		rm -rf "${SYSROOT:?}/usr" # Don't wanna accidentally delete /usr :)
+	fi
+	make DESTDIR="${SYSROOT}" install || exit 1
+	mv "${SYSROOT}/usr/i686-pc-avuos/"* "${SYSROOT}/usr" || exit 1
+	rmdir "${SYSROOT}/usr/i686-pc-avuos" || exit 1
+
+	popd
+}
 
 mkdir -p "$BUILD"
-cd "$BUILD"
 
-if [ ! -d "$BINUTILS_FILE" ]; then
-	printf "Downloading binutils %s...\n" "$BINUTILS_VERSION"
-	curl "$BINUTILS_URL" > "$BINUTILS_FILE.tar.gz"
-	printf "Extracting binutils...\n"
-	tar -xzf "$BINUTILS_FILE.tar.gz"
-	rm "$BINUTILS_FILE.tar.gz"
+if [ "$1" ]; then
+	if [ "$1" == "edited-binutils" ]; then
+		build_binutils edited
+	elif [ "$1" == "edited-gcc" ]; then
+		build_gcc edited
+	elif [ "$1" == "edited-newlib" ]; then
+		build_newlib edited
+	else
+		printf "Unknown argument %s. Please pass either edited-binutils, edited-gcc, or edited-newlib to rebuild the respective repo from the edit directory.\n" "$1"
+		exit
+	fi
+	BUILT_SOMETHING="YES"
+else
+	if [ ! -d "$PREFIX" ]; then
+		printf "Building binutils...\n"
+		build_binutils
+		build_gcc
+		BUILT_SOMETHING="YES"
+	fi
 
-	cd "$BINUTILS_FILE"
-
-	printf "Patching binutils...\n"
-	patch -p1 < "$DIR/binutils-$BINUTILS_VERSION.patch" > /dev/null
-	printf "binutils patched!\n"
-
-	cd ..
+	if [ ! -d "$SYSROOT/usr" ]; then
+		printf "Building newlib...\n"
+		build_newlib
+		BUILT_SOMETHING="YES"
+	fi
 fi
 
-if [ ! -d "$GCC_FILE" ]; then
-	printf "Downloading gcc %s...\n" "$GCC_VERSION"
-	curl "$GCC_URL" > "$GCC_FILE.tar.gz"
-	printf "Extracting gcc...\n"
-	tar -xzf "$GCC_FILE.tar.gz"
-	rm "$GCC_FILE.tar.gz"
-
-	cd "$GCC_FILE"
-
-	printf "Patching gcc...\n"
-	patch -p1 < "$DIR/gcc-$GCC_VERSION.patch" > /dev/null
-	printf "gcc patched!\n"
-
-	cd ..
+if [ ! "$BUILT_SOMETHING" ]; then
+	printf "There's nothing to build.\n"
+	printf "To rebuild binutils & gcc, delete %s.\n" "$PREFIX"
+	printf "To rebuild libc (newlib), delete %s.\n" "$SYSROOT"
+	exit 1
+else
+	printf "Done! The toolchain (%s) is installed at %s and the sysroot is at %s.\n" "$TARGET" "$PREFIX" "$SYSROOT"
+	printf "You can safely delete %s if you don't want the cached toolchain sources anymore.\n" "$BUILD"
 fi
-
-printf "Configuring binutils...\n"
-mkdir -p "binutils-$BINUTILS_VERSION-build"
-cd "binutils-$BINUTILS_VERSION-build"
-"../$BINUTILS_FILE/configure" --prefix="$PREFIX" --target="$TARGET" --with-sysroot --disable-nls
-printf "Making binutils...\n"
-make -j "$NUM_JOBS" || exit 1
-printf "Installing binutils...\n"
-make install || exit 1
-printf "binutils installed!\n"
-cd ..
-
-printf "Configuring gcc...\n"
-mkdir -p "gcc-$GCC_VERSION-build"
-cd "gcc-$GCC_VERSION-build"
-"../$GCC_FILE/configure" --prefix="$PREFIX" --target="$TARGET" --disable-nls --enable-languages=c,c++ --without-headers
-printf "Making gcc...\n"
-make -j "$NUM_JOBS" all-gcc all-target-libgcc || exit 1
-printf "Installing gcc...\n"
-make install-gcc install-target-libgcc || exit 1
-printf "gcc installed!\n"
-
-printf "Done! The toolchain (%s) is installed at %s.\n" "$TARGET" "$PREFIX"

@@ -1,3 +1,18 @@
+/*
+	This file is part of avuOS.
+	avuOS is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	avuOS is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with avuOS.  If not, see <https://www.gnu.org/licenses/>.
+	Copyright (c) avun1t 2022. All rights reserved.
+*/
+
 #include <kernel/kstddef.h>
 #include <kernel/interrupt/idt.h>
 #include <kernel/interrupt/irq.h>
@@ -18,16 +33,26 @@ void irq_remove_handler(int irq)
 
 void irq_remap()
 {
-	outb(0x20, 0x11);
-	outb(0xA0, 0x11);
-	outb(0x21, 0x20);
-	outb(0xA1, 0x28);
-	outb(0x21, 0x04);
-	outb(0xA1, 0x02);
-	outb(0x21, 0x01);
-	outb(0xA1, 0x01);
-	outb(0x21, 0x0);
-	outb(0xA1, 0x0);
+	outb(PIC1_COMMAND, 0x11); //Init
+	io_wait();
+	outb(PIC2_COMMAND, 0x11); //Init
+	io_wait();
+	outb(PIC1_DATA, 0x20); //Offset
+	io_wait();
+	outb(PIC2_DATA, 0x28); //Offset
+	io_wait();
+	outb(PIC1_DATA, 0x04); //Tell master PIC slave PIC is at irq2
+	io_wait();
+	outb(PIC2_DATA, 0x02); //Slave PIC cascade identity
+	io_wait();
+	outb(PIC1_DATA, 0x01); //8086 mode
+	io_wait();
+	outb(PIC2_DATA, 0x01); //8086 mode
+	io_wait();
+
+	//No mask
+	outb(PIC1_DATA, 0);
+	outb(PIC2_DATA, 0);
 }
 
 void irq_init()

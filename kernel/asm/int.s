@@ -139,7 +139,7 @@ global irq15
 		jmp irq_common
 %endmacro
 
-irq0:
+irq0
 	push eax
 	mov eax, 0x20
 	out 0x20, al ; bytes only plz

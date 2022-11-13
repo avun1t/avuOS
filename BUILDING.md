@@ -26,6 +26,13 @@
 1. Open the `toolchain` directory in your terminal and run `build-toolchain.sh`.
 2. Make a cup of coffee and wait for the toolchain to compile.
 
+### Editing the toolchain
+If you'd like to edit the toolchain, you can run the `edit-toolchain.sh` script to download patches and set up a git repository for each one. Then, use the `gen-patches.sh` script to generate patch files for each one.
+
+**DO NOT** git commit in the repositories created by `edit-toolchain.sh` or else `gen-patches.sh` won't work properly.
+
+To build something from the `edit` directory, pass the `edited-[thing]` to the `build-toolchain.sh` script. (ex.: `build-toolchain.sh edited-newlib` to build newlib from the edit directory)
+
 ## Configuring CMake
 1. Make sure you've built the toolchain first.
 2. Make a build folder somewhere outside of this project where you'd like to build the kernel.
@@ -33,7 +40,7 @@
 
 ## Building and running avuOS
 1. Either run the following commands as root, or use sudo su to open a root shell in the build directory you made earlier.
-2. In your build directory, run `make yuku32` to build the kernel.
+2. In your build directory, run `make` and then `make install` to build the kernel and programs.
 3. Run `make image` to make the root filesystem image.
 4. Run `make qemu-image` to run qemu with the image you just made.
 5. Enjoy!
