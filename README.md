@@ -1,4 +1,5 @@
 # avuOS
+## avuOS is defunct, take a look at [Saturn](https://github.com/avun1t/saturn).
 ### The stupid Operating System
 
 ### What's working
