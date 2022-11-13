@@ -18,6 +18,8 @@ public:
 	void set_active();
 	bool active();
 
+	bool buffered = true;
+
 protected:
 	static void register_tty(size_t id, TTYDevice *device);
 	static void set_current_tty(size_t tty);
@@ -29,6 +31,7 @@ private:
 	void handle_key(KeyEvent) override;
 
 	DC::circular_queue<uint8_t> _input_buffer;
+	DC::circular_queue<uint8_t> _buffered_input_buffer;
 	DC::string _name;
 	size_t _id;
 	bool _active = false;

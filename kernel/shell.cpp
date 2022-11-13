@@ -43,17 +43,10 @@ void Shell::shell()
 	while (!exitShell) {
 		printf("kernel:%s$ ", current_dir->get_full_path().c_str());
 
-		size_t current_char = 0;
-		char read = 0;
-		while (true) {
-			size_t nread = tty->read((uint8_t *)(&read), 1);
-			if (nread) {
-				if (read == '\n') break;
-				if (read == '\b') current_char--;
-				else kbdbuf[current_char++] = read;
-			}
-		}
-		kbdbuf[current_char] = '\0';
+		ssize_t nread;
+		while (!(nread = tty->read((uint8_t *)kbdbuf, 511)));
+		kbdbuf[nread - 1] = '\0';
+		
 		set_color(0x07);
 
 		substr(index_of(' ', kbdbuf), kbdbuf, cmdbuf);
@@ -71,30 +64,6 @@ void Shell::shell()
 	TaskManager::current_process()->kill();
 }
 
-/*
-bool find_and_execute(char *cmd, bool wait)
-{
-	file_t *file = (file_t *)kmalloc(sizeof(file_t));
-	if (shellfs->get_file(cmd, file, shellfs) && !file->isDirectory) {
-		if (file->sectors*512 > 0x1000) {
-			printf("Executable too large.\n");
-		} else {
-			shellfs->read(file, prog, shellfs);
-			
-			process_t *proc = create_process(cmd, (uint32_t)progx);
-			uint32_t pid = add_process(proc);
-			
-			while(wait && proc->state == PROCESS_ALIVE);
-		}
-
-		kfree(file, sizeof(file_t));
-		return true;
-	}
-
-	return false;
-}
-*/
-
 void Shell::command_eval(char *cmd, char *args)
 {
 	if (strcmp(cmd,"help")) {
@@ -106,7 +75,6 @@ void Shell::command_eval(char *cmd, char *args)
 		println("cat: Prints a file's contents.");
 		println("about: Prints some information.");
 		println("mem: Prints information about the memory.");
-		//println("partinfo: Prints information about the current partition.");
 		println("pagefault: Triggers a page fault, in case you wanted to.");
 		println("tasks: Prints all running tasks.");
 		println("bg: Run a program in the background.");
@@ -220,10 +188,6 @@ void Shell::command_eval(char *cmd, char *args)
 		exitShell = true;
 	} else if (strcmp(cmd,"tasks")) {
 		TaskManager::print_tasks();
-	} else if (strcmp(cmd,"bg")) {
-		/*if (strcmp(args,"") || !find_and_execute(args, false)) {
-			printf("Cannot find \"%s\".\n", args);
-		}*/
 	} else if (strcmp(cmd,"kill")) {
 		uint32_t pid = atoi(args);
 		Process *proc = TaskManager::process_for_pid(pid);
@@ -317,16 +281,6 @@ void Shell::command_eval(char *cmd, char *args)
 			delete[] program_headers;
 			delete header;
 		}
-	} else if (strcmp(cmd, "exec")) {
-		ResultRet<Process *> p = Process::create_user(args);
-		if (p.is_error()) {
-			printf("Failed to create process: %d\n", p.code());
-			return;
-		}
-		
-		TaskManager::add_process(p.value());
-		pid_t pid = p.value()->pid();
-		while (TaskManager::process_for_pid(pid));
 	} else if (strcmp(cmd, "lspci")) {
 		PCI::enumerate_devices([](PCI::Address address, PCI::ID id, void *dataPtr) {
 			uint8_t clss = PCI::read_byte(address, PCI_CLASS);
@@ -337,9 +291,16 @@ void Shell::command_eval(char *cmd, char *args)
 		IDE::PATAChannel channel = IDE::find_pata_channel(ATA_PRIMARY);
 		printf("%x:%x.%x Int %d\n", channel.address.bus, channel.address.slot, channel.address.function, PCI::read_byte(channel.address, PCI_INTERRUPT_LINE));
 	} else {
-		printf("Unrecognized command '%s'\n", cmd);
-		/*if (!find_and_execute(cmd, true)) {
-			printf("\"%s\" is not a recognized command, file, or program.\n", cmd);
-		}*/
+		ResultRet<Process *> p = Process::create_user(cmd);
+
+		if (p.is_error()) {
+			if (p.code() == -ENOENT) printf("Could not find command '%s'\n", cmd);
+			else printf("Error creating process: %d\n", p.code());
+			return;
+		}
+
+		TaskManager::add_process(p.value());
+		pid_t pid = p.value()->pid();
+		while (TaskManager::process_for_pid(pid));
 	}	
 }

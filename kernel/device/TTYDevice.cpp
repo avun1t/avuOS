@@ -25,7 +25,7 @@ void TTYDevice::register_tty(size_t id, TTYDevice *device)
 }
 
 
-TTYDevice::TTYDevice(size_t id, const DC::string& name, unsigned int major, unsigned int minor) : CharacterDevice(major, minor), _name(name), _input_buffer(1024), _id(id)
+TTYDevice::TTYDevice(size_t id, const DC::string& name, unsigned int major, unsigned int minor) : CharacterDevice(major, minor), _name(name), _input_buffer(1024), _buffered_input_buffer(1024), _id(id)
 {
 	register_tty(id, this);
 }
@@ -40,7 +40,7 @@ ssize_t TTYDevice::read(FileDescriptor &fd, size_t offset, uint8_t *buffer, size
 {
 	count = min(count, _input_buffer.size());
 	size_t count_loop = count;
-	while (count_loop--) *buffer++ = _input_buffer.pop();
+	while (count_loop--) *buffer++ = _input_buffer.pop_front();
 	return count;
 }
 
@@ -58,6 +58,24 @@ void TTYDevice::handle_key(KeyEvent event)
 {
 	if (!event.pressed()) return;
 	if (!event.character) return;
-	_input_buffer.push(event.character);
-	putch(event.character);
+	
+	if (buffered) {
+		if (event.character == '\n') {
+			_buffered_input_buffer.push('\n');
+			while (!_buffered_input_buffer.empty())
+				_input_buffer.push(_buffered_input_buffer.pop_front());
+			putch('\n');
+		} else if (event.character == '\b') {
+			if (!_buffered_input_buffer.empty()) {
+				_buffered_input_buffer.pop_back();
+				putch('\b');
+			}
+		} else {
+			_buffered_input_buffer.push(event.character);
+			putch(event.character);
+		}
+	} else {
+		_input_buffer.push(event.character);
+		putch(event.character);
+	}
 }
